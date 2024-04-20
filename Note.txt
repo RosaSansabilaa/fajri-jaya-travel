@@ -1,0 +1,6 @@
+Navbar halaman login & register, hamburger button tidak dapat menampilkan menu pada halaman mobile
+
+RegisterController & LoginController pada app/http/controllers/auth/ masih terdapat error untuk mengatur
+    rute layout admin
+
+Font pada navbar login register
