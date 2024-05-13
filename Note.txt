@@ -4,3 +4,8 @@ RegisterController & LoginController pada app/http/controllers/auth/ masih terda
     rute layout admin
 
 Font pada navbar login register
+
+adminDashboardController -> belum tau benar atau salah
+route/web.php (khususnya sintaks route yg bawah) -> belum tau benar atau salah
+
+nama file dan method belum disesuaikan sama class diagram

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Admin\adminDashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,12 +38,14 @@ Route::get('/tentang-kami', function () {
     return view('about-us');
 });
 
-Route::get('/dashboard-admin', function () {
-    return view('admin/dashboard-admin');
+Route::get('/admin/dashboard', function () {
+    return view('admin/adminDashboard');
 });
 
 Auth::routes();
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login')->middleware('guest');
-Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register')->middleware('guest');
+//From chatgpt
+// Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login')->middleware('guest');
+// Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register')->middleware('guest');
+// Route::get('/admin/dashboard', [adminDashboardController::class, 'index'])->name('admin.dashboard')->middleware('auth');

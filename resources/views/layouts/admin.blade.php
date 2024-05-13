@@ -20,8 +20,8 @@
     <!-- Styles -->
     <link href="{{ asset('assets/css/sb-admin-2.css') }}" rel="stylesheet">
     <!-- Bootstrap JS -->
-    {{-- <script src="{{ asset('js/jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/js/sb-admin-2-min.js') }}"></script> --}}
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/sb-admin-2-min.js') }}"></script>
     <script src="{{ asset('node_modules/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('node_modules/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('node_modules/popper.js/dist/umd/popper.min.js') }}"></script>
@@ -30,13 +30,26 @@
     <!-- Add other JavaScript files here if needed -->
     
 </head>
-<body>
-    <div id="app">
-       <!-- @include('partials.admin-navbar') -->
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+       @include('partials.adminSideBar')
         
-        <main class="py-4">
-            @yield('content')
-        </main>
+       <!-- Content Wrapper -->
+       <div id="content-wrapper" class="d-flex flex-column">
+            {{-- <main> --}}
+                <div id="content">
+                    @include('partials/adminTopBar')
+                    @yield('content')
+                </div>
+            {{-- </main> --}}
+            @include('partials/adminFooter')
+        </div>
+        <!-- End of Content Wrapper -->
     </div>
+    <!-- End of Page Wrapper -->
+
+    @include('partials/adminLogout')
+
 </body>
 </html>

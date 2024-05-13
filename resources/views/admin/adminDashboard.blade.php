@@ -2,12 +2,15 @@
 
 @section('content')
 
-<body id="page-top">
+{{-- <body> --}}
 
     <!-- Page Wrapper -->
-    <div id="wrapper">
+    {{-- <div id="wrapper"> --}}
 
-        <!-- Sidebar -->
+        <!-- Sidebar disini -->
+
+
+        {{-- <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
@@ -124,15 +127,15 @@
             </div>
 
         </ul>
-        <!-- End of Sidebar -->
-
+        <!-- End of Sidebar --> --}}
+        
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+        {{-- <div id="content-wrapper" class="d-flex flex-column"> --}}
 
             <!-- Main Content -->
-            <div id="content">
+            {{-- <div id="content"> --}}
 
-                <!-- Topbar -->
+                {{-- <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
@@ -334,7 +337,7 @@
                     </ul>
 
                 </nav>
-                <!-- End of Topbar -->
+                <!-- End of Topbar --> --}}
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
@@ -345,26 +348,26 @@
                 </div>
                 <!-- /.container-fluid -->
 
-            </div>
+            {{-- </div> --}}
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
+            {{-- <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                         <span>Copyright &copy; Your Website 2020</span>
                     </div>
                 </div>
-            </footer>
+            </footer> --}}
             <!-- End of Footer -->
 
-        </div>
+        {{-- </div> --}}
         <!-- End of Content Wrapper -->
 
-    </div>
+    {{-- </div> --}}
     <!-- End of Page Wrapper -->
 
-    <!-- Scroll to Top Button-->
+    {{-- <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
@@ -387,7 +390,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
