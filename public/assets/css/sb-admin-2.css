@@ -10645,7 +10645,8 @@ a:focus {
     font-size: 2rem;
   }
   .sidebar.toggled .sidebar-brand .sidebar-brand-text {
-    display: none;
+    display: inline;
+    font-size: 0.8rem;
   }
   .sidebar.toggled .sidebar-heading {
     text-align: center;

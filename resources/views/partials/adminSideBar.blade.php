@@ -3,9 +3,6 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
-        </div>
         <div class="sidebar-brand-text mx-3">Fajri Jaya Travel</div>
     </a>
 
@@ -14,40 +11,43 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
-        <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+        <a class="nav-link" href="/">
             <span>Dashboard</span></a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href=".html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Pemesanan</span></a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href=".html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Jadwal Perjalanan</span></a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href=".html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Kendaraan</span></a>
+           <span>Kendaraan</span></a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href=".html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Supir</span></a>
     </li>
     
     <li class="nav-item">
         <a class="nav-link" href=".html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Riwayat Pemesanan</span></a>
     </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+
 
     {{-- <!-- Divider -->
     <hr class="sidebar-divider">
@@ -137,12 +137,12 @@
     </li> --}}
 
     <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
+    {{-- <hr class="sidebar-divider d-none d-md-block">
 
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
-    </div>
+    </div> --}}
 
 </ul>
 <!-- End of Sidebar -->

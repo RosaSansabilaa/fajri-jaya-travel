@@ -2,7 +2,7 @@
 
 @section('content')
 
-{{-- <body> --}}
+<body>
 
     <!-- Page Wrapper -->
     {{-- <div id="wrapper"> --}}

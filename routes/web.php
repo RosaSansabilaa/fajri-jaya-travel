@@ -42,6 +42,22 @@ Route::get('/admin/dashboard', function () {
     return view('admin/adminDashboard');
 });
 
+Route::get('/admin/pemesanan', function () {
+    return view('admin/admin-pemesanan/adminPemesanan');
+});
+
+Route::get('/admin/jadwal-perjalanan', function () {
+    return view('admin/adminJadwalPerjalanan');
+});
+
+Route::get('/admin/kendaraan', function () {
+    return view('admin/adminKendaraan');
+});
+
+Route::get('/admin/supir', function () {
+    return view('admin/adminDataSupir');
+});
+
 Auth::routes();
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
