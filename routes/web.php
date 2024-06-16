@@ -47,15 +47,15 @@ Route::get('/admin/pemesanan', function () {
 });
 
 Route::get('/admin/jadwal-perjalanan', function () {
-    return view('admin/adminJadwalPerjalanan');
+    return view('admin/admin-jadwal/adminJadwalPerjalanan');
 });
 
 Route::get('/admin/kendaraan', function () {
-    return view('admin/adminKendaraan');
+    return view('admin/admin-kendaraan/adminKendaraan');
 });
 
 Route::get('/admin/supir', function () {
-    return view('admin/adminDataSupir');
+    return view('admin/admin-supir/adminSupir');
 });
 
 Auth::routes();
