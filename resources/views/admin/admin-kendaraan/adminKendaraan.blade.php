@@ -163,7 +163,7 @@
                 <form id="formHapusDataKendaraan" method="post" action="">
                     @csrf   <!-- Menyertakan token CSRF untuk keamanan -->
                     @method('DELETE')
-                    <button class="btn btn-danger" type="submit">Hapus</button>
+                    <button class="btn btn-danger" type="">Hapus</button>
                 </form>
             </div>
         </div>

@@ -14,9 +14,6 @@
             <h6 class="m-0 font-weight-bold text-primary">Pemesanan</h6>
         </div>
         <div class="card-body">
-            <div class="mb-3">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahPemesananPage">Tambah Data</button>
-            </div>
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead class="text-center">
@@ -66,9 +63,6 @@
 </div>
 <!-- /.container-fluid -->
 
-<!-- Modal Konfirmasi Pemesanan Tiket -->
-
-<!-- Akhir Modal Konfirmasi Pemesanan Tiket -->
 
 <!-- Modal Hapus Pemesanan Tiket -->
 <div class="modal fade" id="hapusPemesananModal" tabindex="-1" role="dialog" aria-labelledby="hapusPemesananLabel" aria-hidden="true">

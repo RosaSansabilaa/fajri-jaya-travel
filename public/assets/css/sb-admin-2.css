@@ -26,7 +26,6 @@
   transition: all 0.3s ease; /* Tambahkan transisi untuk kehalusan */
 }
 
-
 @media (max-width: 767px) {
   .sidebar-brand .sidebar-brand-text {
       font-size: 0.8rem; /* Sesuaikan ukuran teks untuk layar kecil */
@@ -36,6 +35,23 @@
   }
 }
 
+/* Custom Detail Pemesanan */
+.card.shadow-lg.bg-white {
+  width: 55rem;   /* Lebar card detail pemesanan */
+  padding: 2rem 3rem 2rem 3rem;   /* atas kanan bawah kiri */
+  /* padding-top: 1rem; */
+}
+.form-group .form-control {
+  font-weight: 650;
+}
+.form-control.lihat-bukti-pembayaran {
+  text-decoration: underline;
+  color: #4e73df;
+  cursor: pointer;
+}
+.lihat-bukti-pembayaran:hover {
+  color: #364b8b; /* Warna teks saat dihover */
+}
 /* Custom tabel */
 /* .tr {
   vertical-align: middle;

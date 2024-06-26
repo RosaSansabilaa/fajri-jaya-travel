@@ -27,36 +27,52 @@ Route::get('/', function () {
 */
 
 Route::get('/masuk', function () {
-    return view('auth/login');
-});
+    return view('auth.login');
+})->name('auth.login');
 
 Route::get('/daftar', function () {
-    return view('auth/register');
-});
+    return view('auth.register');
+})->name('auth.register');
 
 Route::get('/tentang-kami', function () {
-    return view('about-us');
-});
+    return view('aboutUs');
+})->name('auth.aboutUs');
 
 Route::get('/admin/dashboard', function () {
     return view('admin/adminDashboard');
-});
+})->name('admin.dashboard');
 
-Route::get('/admin/pemesanan', function () {
-    return view('admin/admin-pemesanan/adminPemesanan');
-});
+// Route::get('/admin/pemesanan', function () {
+//     return view('admin/admin-pemesanan/adminPemesanan');
+// });
 
-Route::get('/admin/jadwal-perjalanan', function () {
-    return view('admin/admin-jadwal/adminJadwalPerjalanan');
-});
+// Route::get('/admin/pemesanan/detail-pemesanan', function () {
+//     return view('admin/admin-pemesanan/adminDetailPemesanan');
+// });
 
-Route::get('/admin/kendaraan', function () {
-    return view('admin/admin-kendaraan/adminKendaraan');
-});
+Route::get('/admin/kelola-pemesanan', function () {
+    return view('admin.admin-pemesanan.adminPemesanan');
+})->name('admin.pemesanan');
 
-Route::get('/admin/supir', function () {
-    return view('admin/admin-supir/adminSupir');
-});
+Route::get('/admin/kelola-pemesanan/detail-pemesanan', function () {
+    return view('admin.admin-pemesanan.adminDetailPemesanan');
+})->name('admin.detailPemesanan');
+
+Route::get('/admin/kelola-jadwal-perjalanan', function () {
+    return view('admin.admin-jadwal.adminJadwalPerjalanan');
+})->name('admin.jadwalPerjalanan');
+
+Route::get('/admin/kelola-data-kendaraan', function () {
+    return view('admin.admin-kendaraan.adminKendaraan');
+})->name('admin.kendaraan');
+
+Route::get('/admin/kelola-data-supir', function () {
+    return view('admin.admin-supir.adminSupir');
+})->name('admin.supir');
+
+Route::get('/admin/riwayat-pemesanan', function () {
+    return view('admin.admin-riwayat.adminRiwayatPemesanan');
+})->name('admin.riwayatPemesanan');
 
 Auth::routes();
 
