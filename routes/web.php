@@ -25,6 +25,9 @@ Route::get('/', function () {
     return view('beranda');
 });
 */
+Route::get('/', function () {
+    return view('beranda');
+})->name('beranda');
 
 Route::get('/masuk', function () {
     return view('auth.login');
@@ -37,6 +40,8 @@ Route::get('/daftar', function () {
 Route::get('/tentang-kami', function () {
     return view('aboutUs');
 })->name('auth.aboutUs');
+
+
 
 Route::get('/admin/dashboard', function () {
     return view('admin/adminDashboard');

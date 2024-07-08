@@ -53,14 +53,14 @@
 <body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
-       @include('partials.adminSideBar')
+        @include('partials.adminSideBar')
         
        <!-- Content Wrapper -->
        <div id="content-wrapper" class="d-flex flex-column">
 
             {{-- <main> --}}
                 <div id="content">
-                    @include('partials/adminTopBar')
+                    @include('partials/navBar')
                     @yield('content')
                 </div>
             {{-- </main> --}}

@@ -1,49 +1,12 @@
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-      <a class="navbar-brand" href="#">Fajri Jaya Travel</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Beranda</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Masuk</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Daftar</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Tentang Kami</a>
-              </li>
-          </ul>
-      </div>
-  </div>
-</nav>
-
-
-
-
-
-<!-- Navigation Bar -->
-{{-- <nav class="navbar navbar-expand-lg fixed-top">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#resNav"> --}}
-      {{-- <span class="navbar-toggler-icon"></span> --}}
-      {{-- <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a href="#" class="navbar-brand">Fajri Jaya Travel</a>
-  </div>
-
-  <div class="collapse navbar-collapse justify-content-end" id="resNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Beranda</a>
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="#">Fajri Jaya Travel</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Beranda</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Masuk</a>
@@ -55,43 +18,8 @@
         <a class="nav-link" href="#">Tentang Kami</a>
       </li>
     </ul>
-  </div> --}}
-  {{-- <div class="collapse navbar-collapse" id="resNav">
-    <ul class="nav navbar-nav justify-content-end">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Team</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </div> --}}
-{{-- </nav>  <!-- End of Navigation Bar --> --}}
-
-{{-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
   </div>
-</nav> --}}
-  
+</nav>
 
 {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container">
