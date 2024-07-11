@@ -16,18 +16,23 @@ use App\Http\Controllers\Admin\adminDashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 /*
 Route::get('/', function () {
     return view('beranda');
 });
 */
+
 Route::get('/', function () {
     return view('beranda');
 })->name('beranda');
+
+Route::get('/cari-jadwal', function () {
+    return view('customer.cari-jadwal.cariJadwal');
+})->name('customer.cariJadwal');
 
 Route::get('/masuk', function () {
     return view('auth.login');

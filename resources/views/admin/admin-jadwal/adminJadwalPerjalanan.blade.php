@@ -88,7 +88,7 @@
                     <div class="mb-3">
                         <label for="asal" class="form-label">Asal</label>
                         <select class="form-control" name="asal" id="asal" required>
-                            <option value="">Pilih asal keberangkatan</option>
+                            <option selected disabled hidden>Pilih asal keberangkatan</option>
                             <option value="mataram">Mataram</option>
                             <option value="taliwang">Taliwang</option>
                             <option value="sumbawa-besar">Sumbawa Besar</option>
@@ -97,7 +97,7 @@
                     <div class="mb-3">
                         <label for="tujuan" class="form-label">Tujuan</label>
                         <select class="form-control" name="tujuan" id="tujuan" required>
-                            <option value="">Pilih tujuan perjalanan</option>
+                            <option selected disabled hidden>Pilih tujuan perjalanan</option>
                             <option value="mataram">Mataram</option>
                             <option value="taliwang">Taliwang</option>
                             <option value="sumbawa-besar">Sumbawa Besar</option>
@@ -106,7 +106,7 @@
                     <div class="mb-3">
                         <label for="nomorPlat" class="form-label">Nomor Plat Kendaraan</label>
                         <select class="form-control" name="nomorPlat" id="nomorPlat" required>
-                            <option value="">Pilih kendaraan yang akan digunakan</option>
+                            <option selected disabled hidden>Pilih kendaraan yang akan digunakan</option>
                             <option value="diisi data plat">diisi data plat</option>
                             <option value="diisi data plat">diisi data plat</option>
                         </select>
@@ -114,7 +114,7 @@
                     <div class="mb-3">
                         <label for="namaSupir" class="form-label">Nama Supir</label>
                         <select class="form-control" name="namaSupir" id="namaSupir">
-                            <option value="">Pilih nama supir</option>
+                            <option selected disabled hidden>Pilih nama supir</option>
                             <option value="diisi nama supir">diisi nama supir</option>
                             <option value="diisi nama supir">diisi nama supir</option>
                         </select>
