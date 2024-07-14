@@ -21,7 +21,7 @@
             {{-- <form method="GET" action="{{ route('jadwal.hasilCari') }}">
                 @csrf --}}
 
-                <div class="form-grop row">
+                <div class="form-group row input-search">
                     <div class="form-group col">
                         <label for="asal" class="col-lg-12 col-form-label">Asal Keberangkatan</label>
 
@@ -77,7 +77,7 @@
 
                 <div class="form-group row">
                     {{-- <div class="col-lg-12 offset-md-6"> --}}
-                    <div class="search-button">
+                    <div class="search-button-container">
                         <button type="submit" class="btn btn-primary" data-toggle="" data-target="">Cari</button>
                         {{-- <a href={{ url()->previous() }} class="btn btn-secondary">Cancel</a> --}}
                     </div>

@@ -129,19 +129,17 @@
 .search-box {
     border: 2px solid black;
     padding: 10px 10px 10px 10px;
-    width: 80%;
     margin-bottom: 2rem;
-    /* align-items: center;
-    justify-content: center; */
-    
 }
 
-.search-button {
-    margin-left: 50%;
-    margin-top: 30px;
+.search-button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
 }
 
-.search-button > button {
+.search-button-container > button {
     padding: 0.3rem 2rem 0.3rem 2rem;
 }
 
@@ -189,16 +187,44 @@
     .fas.fa-chevron-down {
         display: inline-block;
     }
+
+    /* Cari Jadwal Page */
+    .search-box {
+        width: 90%;
+    }
+
+    .search-box .input-search {
+        flex-direction: column;
+    }
 }
 
 /* Tablets */
-@media (min-width: 576x) and (max-width: 767px) {
+@media (min-width: 576px) and (max-width: 767px) {
+
+    /* Cari Jadwal Page */
+    .search-box {
+        width: 80%;
+    }
+
+    .search-box .input-search {
+        flex-direction: column;
+    }
 }
 
 /* Dekstop */
-@media (min-width: 768x) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 991px) {
+
+    /* Cari Jadwal Page */
+    .search-box {
+        width: 90%;
+    }
 }
 
 /* Large Desktop */
 @media (min-width: 992px) {
+
+    /* Cari Jadwal Page */
+    .search-box {
+        width: 85%;
+    }
 }
