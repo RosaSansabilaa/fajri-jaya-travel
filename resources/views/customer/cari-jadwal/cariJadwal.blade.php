@@ -76,10 +76,8 @@
                 </div>
 
                 <div class="form-group row">
-                    {{-- <div class="col-lg-12 offset-md-6"> --}}
                     <div class="search-button-container">
                         <button type="submit" class="btn btn-primary" data-toggle="" data-target="">Cari</button>
-                        {{-- <a href={{ url()->previous() }} class="btn btn-secondary">Cancel</a> --}}
                     </div>
                 </div>
             {{-- </form> --}}

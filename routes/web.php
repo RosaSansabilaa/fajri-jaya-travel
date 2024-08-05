@@ -30,10 +30,6 @@ Route::get('/', function () {
     return view('beranda');
 })->name('beranda');
 
-Route::get('/cari-jadwal', function () {
-    return view('customer.cari-jadwal.cariJadwal');
-})->name('customer.cariJadwal');
-
 Route::get('/masuk', function () {
     return view('auth.login');
 })->name('auth.login');
@@ -46,6 +42,29 @@ Route::get('/tentang-kami', function () {
     return view('aboutUs');
 })->name('auth.aboutUs');
 
+Route::get('/cari-jadwal', function () {
+    return view('customer.cari-jadwal.cariJadwal');
+})->name('customer.cariJadwal');
+
+Route::get('/cari-jadwal/jadwal-perjalanan', function () {
+    return view('customer.cari-jadwal.hasilCari');
+})->name('customer.hasilCari');
+
+Route::get('/cari-jadwal/jadwal-perjalanan/detail-pemesanan', function () {
+    return view('customer.pemesanan.detailPemesanan');
+})->name('customer.isiDetailPemesanan');
+
+Route::get('/cari-jadwal/jadwal-perjalanan/detail-pemesanan/metode-pembayaran', function () {
+    return view('customer.pemesanan.pilihMetodePembayaran');
+})->name('customer.pilihMetodePembayaran');
+
+Route::get('/cari-jadwal/jadwal-perjalanan/detail-pemesanan/metode-pembayaran/konfirmasi-pembayaran-transfer', function () {
+    return view('customer.pemesanan.pembayaranTransfer');
+})->name('customer.pembayaranTransfer');
+
+Route::get('/cari-jadwal/jadwal-perjalanan/detail-pemesanan/metode-pembayaran/konfirmasi-pembayaran-cash', function () {
+    return view('customer.pemesanan.pembayaranCash');
+})->name('customer.pembayaranCash');
 
 
 Route::get('/admin/dashboard', function () {

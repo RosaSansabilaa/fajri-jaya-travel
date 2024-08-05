@@ -34,7 +34,7 @@
 }
 
 .card {
-    background-color: cornflowerblue;
+    background-color: rgb(183, 179, 235);
     color: black;
     border-radius: 20px;
     padding: 13px 7px 15px 7px;
@@ -143,6 +143,180 @@
     padding: 0.3rem 2rem 0.3rem 2rem;
 }
 
+/* Hasil Cari Page */
+.hasilCariPage-card {
+    margin-top: 57px;
+    display: flex;
+}
+
+.destination-container {
+    display: flex;
+    width: 100%;
+    border: 2px solid black;
+    padding: 20px 20px 10px 20px;
+    margin: 10px 0 10px 0;
+    flex-direction: column;
+}
+
+.destination-text {
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+}
+
+.date-text {
+    font-size: medium;
+    font-weight: bold;
+}
+
+.listJadwal-container {
+    border-bottom: 2px solid black;
+}
+
+.listJadwal-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 10px 0 15px 10px;
+    margin: 0 auto; /* top bottom: 0, right left: auto */
+    font-weight: bold;
+}
+
+.jadwalItem-container {
+    border: 3px solid black;
+    margin: 15px 0 3px 0;
+}
+
+.jadwal-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 20px 10px 20px 0;
+    margin: 0 auto; /* top bottom: 0, right left: auto */
+    font-weight: bold;
+}
+
+.jadwalItem-container .showSeats-button {
+    margin-bottom: 15px;
+    margin-left: 75vw;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+/* Isi Detail Pemesaanan Page */
+.detailPemesananPage-card {
+    margin-top: 57px;
+    display: flex;
+    padding: 0 30px 20px 30px;
+}
+
+.detailPemesananPage-card .detail-pemesanan {
+    display: grid;
+    grid-gap: 20px;
+}
+
+.detail-pemesanan h5 {
+    font-weight: 700;
+}
+
+.detailPemesananPage-card .detailPemesanan-container {
+    display: grid;
+    border: 2px solid black;
+    padding: 25px 20px 10px 20px;
+    margin: 10px 20px 40px auto;
+}
+
+.detailPerjalanan-container > p {
+    font-weight: 700;
+    font-size: large;
+    line-height: 0.8;
+}
+
+.detailHarga-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.detailHarga-container > .total-harga {
+    font-weight: bold;
+}
+
+.detailHarga-container button {
+    width: 100%;
+}
+
+.card .button-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 20px 0;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.button-container .left-button {
+    padding: 10px 20px;
+}
+
+.button-container .right-button {
+    padding: 10px 40px;
+}
+
+/*Pilih Metode Pembayaran Page*/
+.pilihMetodePembayaranPage-card {
+    margin-top: 57px;
+    display: flex;
+    padding: 0 30px 20px 30px;
+}
+
+.pilihMetodePembayaranPage-card .detailPerjalanan-section {
+    border: 2px solid black;
+    padding: 20px 20px 20px 20px;
+}
+
+.pilihMetodePembayaranPage-card .detailPemesanan-section {
+    margin-bottom: 30px;
+}
+
+.pilihMetodePembayaranPage-card .pilihMetodePembayaran-container {
+    border: 2px solid black;
+    padding: 30px 40px 30px 40px;
+}
+
+.pilihMetodePembayaranPage-card .transferMethod-container {
+    border: 2px solid black;
+    padding: 30px 40px 30px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    transition: background-color 0.3s ease;
+}
+
+.transferMethod-container:hover {
+    background-color: gray;
+}
+
+.pilihMetodePembayaranPage-card .transferBank-content {
+    text-align: start;
+}
+
+.transferBank-content .transferBank-title {
+    font-weight: 800;
+}
+
+.pilihMetodePembayaranPage-card .pilihMetodePembayaran-container > div:first-child {
+    margin-bottom: 30px;
+}
+
+.pilihMetodePembayaranPage-card .pilihMetodePembayaran-section h5{
+    font-weight: 700;
+}
 
 /* Mobile */
 @media (max-width: 575px) {
@@ -196,6 +370,11 @@
     .search-box .input-search {
         flex-direction: column;
     }
+
+    /* Hasil Cari Page */
+    .hasilCariPage-card {
+        
+    }
 }
 
 /* Tablets */
@@ -209,6 +388,7 @@
     .search-box .input-search {
         flex-direction: column;
     }
+
 }
 
 /* Dekstop */
@@ -218,6 +398,32 @@
     .search-box {
         width: 90%;
     }
+
+    /* Isi Detail Pemesaanan Page */
+    .detailPemesananPage-card .detail-pemesanan {
+        grid-template-columns: 2fr 1fr;   /*membuat grid dengan 2 kolom*/
+        grid-template-rows: auto auto auto; /*membuat grid dengan 3 baris*/
+        grid-template-areas:    /*mengatur letak grid*/
+            "left1 right"
+            "left2 right"
+            "left3 right";
+    }
+    
+    .detailPemesananPage-card .detailPerjalanan-section:nth-child(1) {
+        grid-area: left1;
+    }
+    
+    .detailPemesananPage-card .dataPemesan-section:nth-child(2) {
+        grid-area: left2;
+    }
+    
+    .detailPemesananPage-card .dataPenumpang-section:nth-child(3) {
+        grid-area: left3;
+    }
+    
+    .detailPemesananPage-card .detailHarga-section {
+        grid-area: right;
+    }
 }
 
 /* Large Desktop */
@@ -226,5 +432,31 @@
     /* Cari Jadwal Page */
     .search-box {
         width: 85%;
+    }
+
+    /* Isi Detail Pemesaanan Page */
+    .detailPemesananPage-card .detail-pemesanan {
+        grid-template-columns: 2fr 1fr;   /*membuat grid dengan 2 kolom*/
+        grid-template-rows: auto auto auto; /*membuat grid dengan 3 baris*/
+        grid-template-areas:    /*mengatur letak grid*/
+            "left1 right"
+            "left2 right"
+            "left3 right";
+    }
+    
+    .detailPemesananPage-card .detailPerjalanan-section:nth-child(1) {
+        grid-area: left1;
+    }
+    
+    .detailPemesananPage-card .dataPemesan-section:nth-child(2) {
+        grid-area: left2;
+    }
+    
+    .detailPemesananPage-card .dataPenumpang-section:nth-child(3) {
+        grid-area: left3;
+    }
+    
+    .detailPemesananPage-card .detailHarga-section {
+        grid-area: right;
     }
 }
