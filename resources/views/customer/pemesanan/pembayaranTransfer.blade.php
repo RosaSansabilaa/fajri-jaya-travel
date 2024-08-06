@@ -46,36 +46,42 @@
                     </div>
                 </div>
             </div>
+
+            <div class="detailPemesanan-section detailHarga-section">
+                <h5>Metode Pembayaran</h5>
+                <span class="right">Transfer Bank</span>
+            </div>
         </div>
     </div>
 
     <div class="pilihMetodePembayaran-section">
-        <h5>Pilih Metode Pembayaran</h5>
+        <h5>Metode Pembayaran Transfer Bank</h5>
+
         <div class="pilihMetodePembayaran-container">
-            <div class="transferMethod-container btn">
-                <div class="transferBank-content">
-                    <span class="transferBank-title">Transfer Bank</span><br>
-                    <span>BNI</span>
-                </div>
-                <div class="chevron">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
+            {{-- <div class="icon-container">
+                <i class="fa fa-upload"></i>
+            </div>
+            <h4>Upload Bukti Pembayaran</h4> --}}
+            <div class="bank-details">
+                <p><strong>Bank:</strong> BNI</p>
+                <p><strong>Nomor Rekening:</strong> 2672 1537 2617 1126</p>
+                <p><strong>Nama Rekening:</strong> Fajri Jaya Travel</p>
             </div>
 
-            <div class="transferMethod-container btn">
-                <div class="transferBank-content">
-                    <span class="transferBank-title">Tunai/Cash</span><br>
-                    <span>Bayar langsung ke agen terdekat</span>
+            <form id="paymentForm" action="/upload" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="paymentProof">Upload Bukti Pembayaran:</label>
+                    <input type="file" id="paymentProof" name="paymentProof" accept="image/*, .pdf" required>
                 </div>
-                <div class="chevron">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </div>
+                {{-- <div class="form-group">
+                    <button type="submit">Upload & Pesan Tiket</button>
+                </div> --}}
+            </form>
         </div>
     </div>
 
     <div class="button-container">
-        <button class="btn btn-secondary left-button" type="button">Kembali</button>
+        <a href="{{ route('customer.pilihMetodePembayaran') }}" class="btn btn-secondary left-button" type="button">Kembali</a>
         <button class="btn btn-primary right-button" type="submit">Pesan Tiket</button>
     </div>
         

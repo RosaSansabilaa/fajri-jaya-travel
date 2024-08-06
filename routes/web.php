@@ -66,6 +66,14 @@ Route::get('/cari-jadwal/jadwal-perjalanan/detail-pemesanan/metode-pembayaran/ko
     return view('customer.pemesanan.pembayaranCash');
 })->name('customer.pembayaranCash');
 
+Route::get('/riwayat-pemesanan', function () {
+    return view('customer.pemesanan.riwayatPemesanan');
+})->name('customer.riwayatPemesanan');
+
+Route::get('/riwayat-pemesanan/detail-pemesanan', function () {
+    return view('customer.pemesanan.detailRiwayatPemesanan');
+})->name('customer.detailRiwayatPemesanan');
+
 
 Route::get('/admin/dashboard', function () {
     return view('admin/adminDashboard');

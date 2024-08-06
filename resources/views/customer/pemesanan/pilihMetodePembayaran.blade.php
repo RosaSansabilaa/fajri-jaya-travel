@@ -73,6 +73,10 @@
             </div>
         </div>
     </div>
+
+    <div class="button-container">
+        <a href="{{ route('customer.isiDetailPemesanan') }}" class="btn btn-secondary left-button" type="button">Kembali</a>
+    </div>
         
 </div>
 @endsection
