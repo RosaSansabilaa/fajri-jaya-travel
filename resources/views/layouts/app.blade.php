@@ -9,10 +9,6 @@
 
     <title>{{ config('app.name', 'Fajri Jaya Travel') }}</title>
 
-    <!-- Scripts -->
-    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
-    {{-- <script src="{{ asset('assets/js/navbar.js') }}" defer></script> --}}
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -23,21 +19,10 @@
     <!-- Custom styles for this template -->
     <link href="{{ asset('assets/css/sb-admin-2.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/jquery.seat-charts.css') }}" rel="stylesheet">
     {{-- <link href="{{ asset('assets/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet"> --}}
 
-    
-
-
-    {{-- <script src="{{ asset('node_modules/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('node_modules/jquery/dist/jquery.min.js') }}"></script>
-    <script src="{{ asset('node_modules/popper.js/dist/umd/popper.min.js') }}"></script> --}}
-
-
-
      <!-- Custom fonts for this template -->
-     
- 
-     <!-- Custom styles for this template -->
      
  
      <!-- Custom styles for this page -->
@@ -49,6 +34,7 @@
     
 
     <!-- Add other JavaScript files here if needed -->
+    <script src="{{ asset('assets/js/jquery.seat-charts.js') }}"></script>
     
 </head>
 <body id="page-top">
@@ -92,6 +78,8 @@
 
     <!-- Page level custom scripts -->
     <script src="{{ asset('assets/js/demo/datatables-demo.js') }}"></script>
+    
+    <script src="{{ asset('assets/js/script.js') }}"></script>
 
 </body>
 </html>
