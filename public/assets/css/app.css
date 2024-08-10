@@ -1,16 +1,50 @@
+
+
 /* Navigaton Bar */
-.navbar {
+.navbar-custom {
     position: fixed;
     width: 100%;
     z-index: 100;  /* mengatur urutan tumpukan elemen, nilai yang lebih tinggi akan muncul di atas */
     top: 0;
-    background-color: goldenrod;
+    background-color: #001524;
+    padding: 10px 30px 10px 30px;
 }
 
+.navbar-custom .nav-link {
+    font-size: 17px;
+    font-weight: 400;
+    color: #ffffff !important;
+}
+
+.navbar-custom .nav-link:hover {
+    color: #ff7d00 !important;
+}
+
+.navbar-custom .nav-link.active {
+    color: #ff7d00 !important;
+    font-weight: 600;
+}
+
+.navbar-brand {
+    font-family: "Amaranth", "Rowdies", sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+
+
 /* Home Page */
+.background-page {
+    background-color: #ebebeb;
+}
+
 .jumbotron {
     padding: 8vw 6vw 8vw 6vw;
-    margin: 5vh 0 2vh 0;
+    margin: 5vh 0 4vh 0;
+    background-image: url("../img/contohgambarjumbotron.jpeg");
+    position: relative;   /* relatif terhadap posisi normalnya, masih di dalam aliran dokumen */
+    background-size: cover; /* mengatur agar background menutupi seluruh elemen tanpa mengubah rasionya */
+    display: flex;
 }
 
 .jumbotron .jumbotron-content {
@@ -18,10 +52,14 @@
     position: relatives;
 }
 
-.jumbotron-content > p {
+.jumbotron-content .jumbotron-heading {
     font-size: 40px;
     font-weight: 600;
-    color: white;
+    color: #ebebeb;
+}
+
+.jumbotron-content > p {
+    color: #c0c0c0;
 }
 
 .jumbotron-button {
@@ -29,12 +67,18 @@
     gap: 20px;  
 }
 
-.homepage-jumbotron {
-    background-color: darkgray;
+.jumbotron > .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 98;
+    position: absolute; /* menempatkan elemen diluar aliran normal, sehingga tidak memengaruhi tata letak */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 .card {
-    background-color: rgb(183, 179, 235);
+    background-color: #c0c0c0;
     color: black;
     border-radius: 20px;
     padding: 13px 7px 15px 7px;
@@ -43,6 +87,7 @@
 .card > h4 {
     text-align: center;
     margin: 20px 0 20px 0;
+    font-weight: 650;
 }
 
 .section {
@@ -104,24 +149,6 @@
 }
 
 /* Cari Jadwal Page */
-.cariJadwal-jumbotron {
-    background-image: url("../img/contohgambarjumbotron.jpeg");
-    position: relative;   /* relatif terhadap posisi normalnya, masih di dalam aliran dokumen */
-    background-size: cover; /* mengatur agar background menutupi seluruh elemen tanpa mengubah rasionya */
-    /* background-attachment: fixed; */
-    display: flex;
-}
-
-.cariJadwal-jumbotron > .overlay {
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 98;
-    position: absolute; /* menempatkan elemen diluar aliran normal, sehingga tidak memengaruhi tata letak */
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
 .cariJadwalPage-card {
     align-items: center;
 }
@@ -691,6 +718,8 @@ div.seatCharts-seat {
     }
     .navbar-toggler-icon {
         font-size: 18px;
+        height: 30px;
+        width: 30px;
     }
 
     /* Home Page */

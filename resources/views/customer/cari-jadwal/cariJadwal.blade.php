@@ -2,15 +2,11 @@
 
 @section('content')
 
-<section class="jumbotron cariJadwal-jumbotron">
+<section class="jumbotron">
     <div class="overlay"></div>
     <div class="jumbotron-content">
-        <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit </p>
-        <a> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque eos nobis perspiciatis, asperiores id fugit, iste at mollitia beatae eligendi ipsa nisi deleniti non. Quibusdam optio vitae sapiente ut laborum?</a>
-        <div class="d-flex jumbotron-button">
-            <a href="{{ route('auth.login') }}" class="btn btn-secondary">Masuk</a>
-            <a href="{{ route('admin.pemesanan') }}" class="btn btn-secondary">Pesan Tiket</a>
-        </div>
+        <p class="jumbotron-heading"> Lorem, ipsum dolor sit amet consectetur adipisicing elit </p>
+        <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque eos nobis perspiciatis, asperiores id fugit, iste at mollitia beatae eligendi ipsa nisi deleniti non. Quibusdam optio vitae sapiente ut laborum?</p>
     </div>
 </section>
 
