@@ -51,7 +51,7 @@
                 {{-- <main> --}}
                     <div id="content" class="background-page">
                         @include('partials/navBar')
-                        @yield('content')
+                            @yield('content')
                     </div>
                 {{-- </main> --}}
 

@@ -19,8 +19,8 @@
         <p class="jumbotron-heading"> Lorem, ipsum dolor sit amet consectetur adipisicing elit </p>
         <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque eos nobis perspiciatis, asperiores id fugit, iste at mollitia beatae eligendi ipsa nisi deleniti non. Quibusdam optio vitae sapiente ut laborum?</p>
         <div class="d-flex jumbotron-button">
-            <a href="{{ route('auth.login') }}" class="btn btn-secondary">Masuk</a>
-            <a href="{{ route('admin.pemesanan') }}" class="btn btn-secondary">Pesan Tiket</a>
+            <a href="{{ route('auth.login') }}" class="btn">Masuk</a>
+            <a href="{{ route('customer.cariJadwal') }}" class="btn">Pesan Tiket</a>
         </div>
     </div>
 </section>
