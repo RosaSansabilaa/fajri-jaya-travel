@@ -62,7 +62,7 @@
                     <span class="right">Rp. 120.000</span>
                 </div>
                 <a href="{{ route('customer.pilihMetodePembayaran') }}">
-                    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="">Pilih Metode Pembayaran</button>
+                    <button type="submit" class="btn" data-toggle="modal" data-target="">Pilih Metode Pembayaran</button>
                 </a>
             </div>
         </div>

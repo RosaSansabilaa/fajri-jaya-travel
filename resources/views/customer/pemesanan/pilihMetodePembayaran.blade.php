@@ -5,7 +5,7 @@
     <h4> Metode Pembayaran </h4>
 
     <div class="detail-pemesanan">
-        <h5>Detail Perjalanan</h5>
+        <h5>Detail Pemesanan</h5>
         <div class="detailPemesanan-section detailPerjalanan-section">
             <div class="detailPemesanan-container detailPerjalanan-container">
                 <p class="destination-detail">Mataram <span class="arrow">→</span> Taliwang</p>
@@ -13,34 +13,50 @@
                 <p class="time-detail">07.30 WITA</p>
             </div>
 
-            <div class="detailPemesanan-section dataPemesan-section">
-                <h5>Data Pemesan</h5>
-                <div class="detailPemesanan-container dataPemesan-container">
-                    <p class="namaPemesan">Putra</p>
+            <div class="detailPemesanan-container">
+                <span>Data Pemesan</span>
+                <div class="">
+                    <div class="justify-content detailPemesan-content">
+                        <span class="left">Nama pemesan</span>
+                        <span class="right">Putra</span>
+                    </div>
+                    <div class="justify-content detailPemesan-content">
+                        <span class="left">Email pemesan</span>
+                        <span class="right">Putra@gmail.com</span>
+                    </div>
+                    {{-- <p class="namaPemesan">Putra</p>
                     <p class="emailPemesan">putra@gmail.com</p>
-                    <p class="noHpPemesan">081234567890</p>
+                    <p class="noHpPemesan">081234567890</p> --}}
                 </div>
             </div>
 
-            <div class="detailPemesanan-section dataPenumpang-section">
-                <h5>Data Penumpang</h5>
+            <div class="detailPemesanan-container">
+                <span>Data Penumpang</span>
                 <div class="detailPemesanan-container dataPenumpang-container">
-                    <p class="namaPenumpang">Putra</p>
+                    <div class="justify-content detailPenumpang-content">
+                        <span class="left">Nama penumpang</span>
+                        <span class="right">Putra</span>
+                    </div>
+                    <div class="justify-content detailPenumpang-content">
+                        <span class="left">Nomor kursi</span>
+                        <span class="right">12</span>
+                    </div>
+                    {{-- <p class="namaPenumpang">Putra</p> --}}
                 </div>
             </div>
 
-            <div class="detailPemesanan-section detailHarga-section">
-                <h5>Detail Harga</h5>
+            <div class="detailPemesanan-container">
+                <span>Detail Harga</span>
                 <div class="detailPemesanan-container detailHarga-container">
-                    <div class="detailHarga-content">
+                    <div class="justify-content detailHarga-content">
                         <span class="left">Harga</span>
                         <span class="right">Rp. 120.000</span>
                     </div>
-                    <div class="detailHarga-content">
-                        <span class="left">Jumlah Kursi</span>
+                    <div class="justify-content detailHarga-content">
+                        <span class="left">Jumlah kursi</span>
                         <span class="right">1</span>
                     </div>
-                    <div class="detailHarga-content total-harga">
+                    <div class="justify-content detailHarga-content total-harga">
                         <span class="left">Total</span>
                         <span class="right">Rp. 120.000</span>
                     </div>

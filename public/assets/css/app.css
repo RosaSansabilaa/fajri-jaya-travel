@@ -116,7 +116,7 @@
     width: 170px;
     height: 200px;
     border-radius: 10px;
-    box-shadow: 0 0 0 0.2rem rgba(151, 153, 166, 0.5);
+    box-shadow: 5px 5px 10px 5px #888888;  /* h-offset v-offset blur spread color */
     /*
     flex: 1;    /* flex-grow, flex-shrink, flex-basis */
 }
@@ -143,7 +143,8 @@
     margin: 10px 20px 30px 20px;
     padding: 10px 15px 10px 15px;
     align-items: center;
-    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 5px #888888;  /* h-offset v-offset blur spread color */
 }
 
 .fas.fa-chevron-right {
@@ -161,10 +162,15 @@
 }
 
 .search-box {
-    padding: 10px 10px 10px 10px;
-    margin-bottom: 2rem;
+    padding: 30px 10px 10px 10px;
+    margin-bottom: 4rem;
+    margin-top: 2vh;
     border-radius: 10px;
-    box-shadow: 0 0 0 0.2rem rgba(151, 153, 166, 0.5);
+    box-shadow: 5px 5px 10px 5px #888888;  /* h-offset v-offset blur spread color */
+}
+
+.search-box label {
+    font-weight: 700;
 }
 
 .search-button-container {
@@ -174,8 +180,14 @@
     margin-top: 1rem;
 }
 
-.search-button-container > button {
+.search-button-container .btn {
     padding: 0.3rem 2rem 0.3rem 2rem;
+    background-color: #ff6700;
+    color: #ffffff;
+}
+
+.search-button-container .btn:hover {
+    background-color: #af4905;
 }
 
 /* Hasil Cari Page */
@@ -550,7 +562,7 @@ div.seatCharts-seat {
 } */
 
 
-/* Isi Detail Pemesaanan Page */
+/* Isi Detail Pemesanan Page */
 .detailPemesananPage-card {
     margin-top: 57px;
     display: flex;
@@ -564,13 +576,15 @@ div.seatCharts-seat {
 
 .detail-pemesanan h5 {
     font-weight: 700;
+    font-size: 22px;
 }
 
 .detailPemesananPage-card .detailPemesanan-container {
     display: grid;
-    border: 2px solid black;
     padding: 25px 20px 10px 20px;
-    margin: 10px 20px 40px auto;
+    margin: 10px 20px 30px auto;
+    box-shadow: 5px 5px 10px 5px #888888;  /* h-offset v-offset blur spread color */
+    border-radius: 10px;
 }
 
 .detailPerjalanan-container > p {
@@ -579,7 +593,7 @@ div.seatCharts-seat {
     line-height: 0.8;
 }
 
-.detailHarga-content {
+.detailPemesananPage-card .detailHarga-content {
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
@@ -601,38 +615,80 @@ div.seatCharts-seat {
     box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
-.button-container .left-button {
+/* .button-container .left-button {
     padding: 10px 20px;
 }
 
 .button-container .right-button {
     padding: 10px 40px;
+} */
+
+.detailHarga-section .btn {
+    /* padding: 0.3rem 2rem 0.3rem 2rem; */
+    background-color: #ff6700;
+    color: #ffffff;
+}
+
+.detailHarga-section .btn:hover {
+    background-color: #af4905;
 }
 
 /*Pilih Metode Pembayaran Page*/
 .pilihMetodePembayaranPage-card {
-    margin-top: 57px;
+    margin-top: 75px;
     display: flex;
-    padding: 0 30px 20px 30px;
+    padding: 0px 60px 30px 60px;
+}
+
+.pilihMetodePembayaranPage-card .detail-pemesanan {
+    margin-bottom: 40px;
 }
 
 .pilihMetodePembayaranPage-card .detailPerjalanan-section {
-    border: 2px solid black;
-    padding: 20px 20px 20px 20px;
+    padding: 30px 50px 30px 50px;
+    box-shadow: 5px 5px 10px 5px #888888;  /* h-offset v-offset blur spread color */
+    border-radius: 10px;
+    margin-top: 15px;
 }
 
-.pilihMetodePembayaranPage-card .detailPemesanan-section {
+.pilihMetodePembayaranPage-card .detailPerjalanan-container {
     margin-bottom: 30px;
 }
 
+.pilihMetodePembayaranPage-card .detailPemesanan-container > span:first-child {
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.pilihMetodePembayaranPage-card .detailPemesanan-container {
+    margin-bottom: 20px;
+}
+
+.pilihMetodePembayaranPage-card .detailPemesanan-container .total-harga {
+    font-size: 17px;
+}
 .pilihMetodePembayaranPage-card .pilihMetodePembayaran-container {
-    border: 2px solid black;
     padding: 30px 40px 30px 40px;
+    box-shadow: 5px 5px 10px 5px #888888;  /* h-offset v-offset blur spread color */
+    border-radius: 10px;
+}
+
+.pilihMetodePembayaran-section h5 {
+    font-size: 22px;
+}
+
+.detailPemesanan-section > span:first-child {
+    font-weight: 700;
+}
+
+.justify-content {
+    display: flex;
+    justify-content: space-between;
 }
 
 .pilihMetodePembayaranPage-card .transferMethod-container {
     border: 2px solid black;
-    padding: 30px 40px 30px 40px;
+    padding: 2vw 4vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -771,6 +827,17 @@ div.seatCharts-seat {
     /* Hasil Cari Page */
     .hasilCariPage-card {
         
+    }
+
+    /* Pilih Metode Pembayaran Page */
+    .pilihMetodePembayaranPage-card {
+        margin-top: 65px;
+        display: flex;
+        padding: 0px 30px 30px 30px;
+    }
+    
+    .pilihMetodePembayaranPage-card .detail-pemesanan {
+        margin-bottom: 40px;
     }
 }
 
