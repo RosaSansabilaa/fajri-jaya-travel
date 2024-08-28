@@ -29,9 +29,56 @@
     font-weight: 700;
 }
 
+/* Login Page */
+.loginPage-card, .registerPage-card {
+    background-color: #c0c0c0;
+    padding-bottom: 2vw;
+}
+
+.loginPage-card .container, .registerPage-card .container {
+    padding-top: 6vw;
+}
+
+.loginPage-card .container .loginInput-content, .registerPage-card .container .registerInput-content {
+    padding: 3rem 2rem;
+}
+
+.loginPage-card .container h1, .registerPage-card .container h1 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.loginPage-card .container label , .registerPage-card .container label {
+    font-weight: 500;
+}
+
+.loginPage-card .container .form-control, .registerPage-card .container .form-control {
+    font-weight: 500;
+}
+
+.loginPage-card .container .login-button, .registerPage-card .container .register-button {
+    background-color: #ff6700;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.loginPage-card .container .login-button:hover, .registerPage-card .container .register-button:hover {
+    background-color: #af4905;
+}
+
+.loginPage-card .card, .registerPage-card .card {
+    box-shadow: 5px 5px 10px 5px #888888;  /* h-offset v-offset blur spread color */
+}
+
+/* Register Page */
+.registerPage-card .bg-register-image {
+    background-color: #ffffff;
+}
+
 /* Home Page */
 .background-page {
-    background-color: #ebebeb;
+    background-color: #c0c0c0;
 }
 
 .jumbotron {
@@ -89,7 +136,8 @@
 
 .card {
     border-radius: 10px;
-    background-color: #c0c0c0;
+    /* background-color: #c0c0c0; */
+    background-color: #aeb8fe; 
 }
 
 .card > h4 {
@@ -117,8 +165,7 @@
     height: 200px;
     border-radius: 10px;
     box-shadow: 5px 5px 10px 5px #888888;  /* h-offset v-offset blur spread color */
-    /*
-    flex: 1;    /* flex-grow, flex-shrink, flex-basis */
+    background-color: #ebebeb;
 }
 
 .section-top .homepage-box img {
@@ -145,6 +192,7 @@
     align-items: center;
     border-radius: 10px;
     box-shadow: 5px 5px 10px 5px #888888;  /* h-offset v-offset blur spread color */
+    background-color: #ebebeb;
 }
 
 .fas.fa-chevron-right {
@@ -167,10 +215,16 @@
     margin-top: 2vh;
     border-radius: 10px;
     box-shadow: 5px 5px 10px 5px #888888;  /* h-offset v-offset blur spread color */
+    background-color: #ebebeb;
 }
 
 .search-box label {
     font-weight: 700;
+}
+
+.cariJadwalPage-card .form-control {
+    background-color: #d6d6d6;
+    border-color: #c0c0c0;
 }
 
 .search-button-container {
@@ -585,6 +639,13 @@ div.seatCharts-seat {
     margin: 10px 20px 30px auto;
     box-shadow: 5px 5px 10px 5px #888888;  /* h-offset v-offset blur spread color */
     border-radius: 10px;
+    background-color: #ebebeb;
+}
+
+.detailPemesananPage-card .form-control {
+    border: 1px solid #c0c0c0;
+    color: black;
+    background-color: #d6d6d6;
 }
 
 .detailPerjalanan-container > p {
@@ -649,6 +710,7 @@ div.seatCharts-seat {
     box-shadow: 5px 5px 10px 5px #888888;  /* h-offset v-offset blur spread color */
     border-radius: 10px;
     margin-top: 15px;
+    background-color: #ebebeb;
 }
 
 .pilihMetodePembayaranPage-card .detailPerjalanan-container {
@@ -671,6 +733,7 @@ div.seatCharts-seat {
     padding: 30px 40px 30px 40px;
     box-shadow: 5px 5px 10px 5px #888888;  /* h-offset v-offset blur spread color */
     border-radius: 10px;
+    background-color: #ebebeb;
 }
 
 .pilihMetodePembayaran-section h5 {
@@ -716,35 +779,40 @@ div.seatCharts-seat {
     font-weight: 700;
 }
 
+
+
 /* Metode Pembayaran Transfer Page */
-.bank-details {
-    background-color: #f9f9f9;
+.konfirmasiPembayaranPage-card .bank-details {
+    background-color: #d1d1d1;
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 20px;
-    border: 1px solid #ddd;
+    /* border: 2px solid black; */
+}
+
+.konfirmasiPembayaranPage-card .bank-details strong {
+    font-size: 17px;
 }
 
 .form-group input[type="file"] {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ccc;
+    border: 1px solid #c0c0c0;
     border-radius: 8px;
     box-sizing: border-box;
 }
 
-.form-container h2 {
-    margin-top: 0;
-    color: #333;
-    text-align: center;
-    font-size: 24px;
+
+.konfirmasiPembayaranPage-card .bookTicket-button {
+    /* padding: 0.3rem 2rem 0.3rem 2rem; */
+    background-color: #ff6700;
+    color: #ffffff;
+    padding-left: 35px;
+    padding-right: 35px;
 }
-.icon-container {
-    text-align: center;
-    margin-bottom: 20px;
-}
-.icon-container i {
-    font-size: 30px;
+
+.konfirmasiPembayaranPage-card .bookTicket-button:hover {
+    background-color: #af4905;
 }
 
 /* .form-group button {
@@ -763,9 +831,73 @@ div.seatCharts-seat {
 } */
 
 /* Riwayat Pemesanan Page */
-.riwayatPemesananPage-card .table .ticket, .details{
+.riwayatPemesananPage-card {
+    padding: 0 2vw 4vw 2vw;
+}
+.riwayatPemesananPage-card .table .ticket-button, .detail-button {
     font-size: 12px;
     padding: 5px 10px;
+    font-weight: 500;
+}
+
+.riwayatPemesanan-section {
+    padding: 30px 40px 30px 40px;
+    box-shadow: 5px 5px 10px 5px #888888;  /* h-offset v-offset blur spread color */
+    border-radius: 10px;
+    margin-top: 15px;
+    background-color: #ebebeb;
+}
+
+.riwayatPemesananPage-card .bookTicket-button {
+    background-color: #ff6700;
+    color: #ffffff;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+.riwayatPemesananPage-card .bookTicket-button:hover {
+    background-color: #af4905;
+}
+
+.riwayatPemesanan-section .table-bordered {
+    color: black;
+}
+
+.riwayatPemesanan-section .table-bordered th {
+    border-bottom-color: #c0c0c0;
+}
+.riwayatPemesananPage-card .table .status-pembayaran {
+    padding: 2px 2px 2px 2px;
+    font-size: 12px;
+    width:90%;
+    color: #ffffff;
+    font-weight: 500;
+    border-radius: 20px;
+}
+.status-pembayaran.confirmed-status {
+    background-color: #24ac7a;
+}
+
+.status-pembayaran.pending-status {
+    background-color: #dba51a;
+}
+
+.status-pembayaran.cancel-status {
+    background-color: #e74a3b;
+}
+
+/* Detail Riwayat Pemesanan Page */
+.detailRiwayatPemesananPage-card .card {
+    padding-top: 50px !important;
+}
+.detailRiwayatPemesananPage-card .status-pembayaran {
+    font-size: 14px;
+    padding: 3px 5px 3px 5px;
+    border-radius: 20px;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
 }
 
 
@@ -787,9 +919,8 @@ div.seatCharts-seat {
     }
 
     /* Home Page */
-
-    .jumbotron-content > p {
-        font-size: 30px
+    .jumbotron-content .jumbotron-heading {
+        font-size: 30px;
     }
 
     .homepage-card > h4 {
@@ -838,6 +969,12 @@ div.seatCharts-seat {
     
     .pilihMetodePembayaranPage-card .detail-pemesanan {
         margin-bottom: 40px;
+    }
+
+    /*Riwayat Pemesanan Page */
+    .riwayatPemesanan-section {
+        padding-left: 25px;
+        padding-right: 25px;
     }
 }
 

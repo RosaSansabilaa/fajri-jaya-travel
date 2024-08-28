@@ -92,10 +92,6 @@
 .lihat-bukti-pembayaran:hover {
   color: #364b8b; /* Warna teks saat dihover */
 }
-/* Custom tabel */
-/* .tr {
-  vertical-align: middle;
-} */
 
 
 
@@ -10962,7 +10958,7 @@ a:focus {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  margin-left: -45px;
+  /* margin-left: -45px; */
 }
 
 .bg-password-image {

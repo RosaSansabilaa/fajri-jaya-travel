@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="card pilihMetodePembayaranPage-card">
+<div class="card pilihMetodePembayaranPage-card detailRiwayatPemesananPage-card">
     <h4> Riwayat Pemesanan </h4>
 
     <!-- Content -->
@@ -89,7 +89,8 @@
             <div class="form-group row">
                 <label for="statusPembayaran" class="col-sm-3 col-form-label">Status Pembayaran</label>
                 <div class="col-sm-3">
-                    <div class="form-control badge badge-pill badge-warning px-3 py-2" id="statusPembayaran">Menunggu Konfirmasi</div>
+                    <div class="status-pembayaran confirmed-status">Terkonfirmasi</div>
+                    {{-- <div class="form-control badge badge-pill badge-warning px-3 py-2" id="statusPembayaran">Menunggu Konfirmasi</div> --}}
                 </div>
             </div>
             <div class="d-flex justify-content-between mt-4">

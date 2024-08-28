@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "fajri-jaya-travel",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Booking Ticket Website",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {

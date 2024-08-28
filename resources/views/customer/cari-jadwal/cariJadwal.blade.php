@@ -73,7 +73,7 @@
 
                 <div class="form-group row">
                     <div class="search-button-container">
-                        <button type="submit" class="btn" data-toggle="" data-target="">Cari</button>
+                        <button type="submit" class="btn" data-toggle="" data-target="" title="Cari jadwal perjalanan">Cari</button>
                     </div>
                 </div>
             {{-- </form> --}}
