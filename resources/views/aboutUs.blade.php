@@ -14,7 +14,6 @@
     </div>
 </section>
 
-
 <div class="card homepage-card">
     <h4> Kenapa harus memilih Fajri Jaya Travel? </h4>
     <div class="section section-top">

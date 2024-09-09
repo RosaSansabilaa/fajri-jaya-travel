@@ -7,7 +7,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Fajri Jaya Travel') }}</title>
+        <title>Fajri Jaya Travel | {{ $title }}</title>
 
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -33,8 +33,6 @@
         
 
         <!-- Bootstrap core JavaScript-->
-        
-
         
 
         <!-- Add other JavaScript files here if needed -->

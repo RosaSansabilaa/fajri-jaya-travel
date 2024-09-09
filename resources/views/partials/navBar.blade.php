@@ -6,16 +6,16 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/">Beranda</a>
+                <a class="nav-link {{ ($title === "Beranda") ? 'active' : '' }}" href="/">Beranda</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/masuk">Masuk</a>
+                <a class="nav-link {{ ($title === "Masuk") ? 'active' : '' }}" href="/masuk">Masuk</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/daftar">Daftar</a>
+                <a class="nav-link {{ ($title === "Daftar") ? 'active' : '' }}" href="/daftar">Daftar</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/tentang-kami">Tentang Kami</a>
+                <a class="nav-link {{ ($title === "Tentang Kami") ? 'active' : '' }}" href="/tentang-kami">Tentang Kami</a>
             </li>
         </ul>
     </div>

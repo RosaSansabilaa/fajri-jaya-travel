@@ -48,27 +48,27 @@
     <h4> Cara pemesanan </h4>
     <div class="section section-bottom">
         <div class="homepage-box">
-            <p> 1 jsjsjdnsdnsjd hdsjjs hdsh hsbjs hsdhs hbjjj</p>
+            <p>Masuk atau daftar akun</p>
         </div>
         <i class="fas fa-chevron-right"></i>
         <i class="fas fa-chevron-down"></i>
         <div class="homepage-box">
-            <p> 2 jsjsjdnsdnsjd hdsjjs hdsh hsbjs hsdhs hbjjj</p>
+            <p>Memilih jadwal perjalanan yang diinginkan</p>
         </div>
         <i class="fas fa-chevron-right"></i>
         <i class="fas fa-chevron-down"></i>
         <div class="homepage-box">
-            <p> 3 jsjsjdnsdnsjd hdsjjs hdsh hsbjs hsdhs hbjjj</p>
+            <p>Mengisi detail pemesanan</p>
         </div>
         <i class="fas fa-chevron-right"></i>
         <i class="fas fa-chevron-down"></i>
         <div class="homepage-box">
-            <p> 4 jsjsjdnsdnsjd hdsjjs hdsh hsbjs hsdhs hbjjj</p>
+            <p>Memilih metode pembayaran dan mengunggah bukti pembayaran</p>
         </div>
         <i class="fas fa-chevron-right"></i>
         <i class="fas fa-chevron-down"></i>
         <div class="homepage-box">
-            <p> 5 jsjsjdnsdnsjd hdsjjs hdsh hsbjs hsdhs hbjjj</p>
+            <p>Cetak tiket</p>
         </div>
     </div>
 </div>
