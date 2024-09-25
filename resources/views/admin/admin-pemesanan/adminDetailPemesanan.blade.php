@@ -13,95 +13,119 @@
 <!-- Content -->
 <div class="row justify-content-center pb-5 pt-2">
     <div class="card shadow-lg bg-white">
+        
         <div class="form-group row">
             <label for="kodePemesanan" class="col-sm-3 col-form-label">Kode Pemesanan</label>
             <div class="col-sm-9">
-                <div class="form-control" id="kodePemesanan">000123</div>
+                <div class="form-control" id="kodePemesanan">{{ $item_pemesanan["pemesanan_id"] }}</div>
             </div>
         </div>
         <div class="form-group row">
             <label for="tanggalKeberangkatan" class="col-sm-3 col-form-label">Tanggal Keberangkatan</label>
             <div class="col-sm-9">
-                <div class="form-control" id="tanggalKeberangkatan">22/06/2024</div>
+                <div class="form-control" id="tanggalKeberangkatan">{{ date('d/m/Y', strtotime($item_pemesanan["tanggal_berangkat"])) }}</div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="tanggalKeberangkatan" class="col-sm-3 col-form-label">Jam Keberangkatan</label>
+            <div class="col-sm-9">
+                <div class="form-control" id="jamKeberangkatan">{{ $item_pemesanan["jam_berangkat"] }}</div>
             </div>
         </div>
         <div class="form-group row">
             <label for="asal" class="col-sm-3 col-form-label">Asal</label>
             <div class="col-sm-9">
-                <div class="form-control" id="asal">Mataram</div>
+                <div class="form-control" id="asal">{{ $item_pemesanan["asal"] }}</div>
             </div>
         </div>
         <div class="form-group row">
             <label for="tujuan" class="col-sm-3 col-form-label">Tujuan</label>
             <div class="col-sm-9">
-                <div class="form-control" id="tujuan">Taliwang</div>
+                <div class="form-control" id="tujuan">{{ $item_pemesanan["tujuan"] }}</div>
             </div>
         </div>
         <div class="form-group row">
             <label for="namaPemesan" class="col-sm-3 col-form-label">Nama Pemesan</label>
             <div class="col-sm-9">
-                <div class="form-control" id="namaPemesan">Putri Aprilia</div>
+                <div class="form-control" id="namaPemesan">{{ $item_pemesanan["nama_pemesan"] }}</div>
             </div>
         </div>
         <div class="form-group row">
             <label for="nomorTelepon" class="col-sm-3 col-form-label">Nomor Telepon</label>
             <div class="col-sm-9">
-                <div class="form-control" id="nomorTelepon">082123456789</div>
+                <div class="form-control" id="nomorTelepon">{{ $item_pemesanan["no_hp"] }}</div>
             </div>
         </div>
         <div class="form-group row">
             <label for="emailPemesan" class="col-sm-3 col-form-label">Email Pemesan</label>
             <div class="col-sm-9">
-                <div class="form-control" id="emailPemesan">putriaprilia@gmail.com</div>
+                <div class="form-control" id="emailPemesan">{{ $item_pemesanan["email_pemesan"] }}</div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="jumlahKursi" class="col-sm-3 col-form-label">Jumlah Kursi</label>
+            <div class="col-sm-9">
+                <div class="form-control" id="jumlahKursi">{{ $item_pemesanan["jumlah_kursi"] }}</div>
             </div>
         </div>
         <div class="form-group row">
             <label for="nomorKursi" class="col-sm-3 col-form-label">Nomor Kursi</label>
             <div class="col-sm-9">
-                <div class="form-control" id="nomorKursi">1, 2</div>
+                <div class="form-control" id="nomorKursi">{{ $item_pemesanan["nomor_kursi"] }}</div>
             </div>
         </div>
         <div class="form-group row">
             <label for="namaPenumpang" class="col-sm-3 col-form-label">Nama Penumpang</label>
             <div class="col-sm-9">
-                <div class="form-control" id="namaPenumpang">Lily, Lulu</div>
+                <div class="form-control" id="namaPenumpang">{{ $item_pemesanan["nama_penumpang"] }}</div>
             </div>
         </div>
         <div class="form-group row">
             <label for="tanggalPemesanan" class="col-sm-3 col-form-label">Tanggal Pemesanan</label>
             <div class="col-sm-9">
-                <div class="form-control" id="tanggalPemesanan">22/06/2024</div>
+                <div class="form-control" id="tanggalPemesanan">{{ $item_pemesanan["tanggal_pesan"] }}</div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="hargaTiket" class="col-sm-3 col-form-label">Harga Tiket</label>
+            <div class="col-sm-9">
+                <div class="form-control" id="harga">Rp. {{ $item_pemesanan["harga"] }}</div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="totalHarga" class="col-sm-3 col-form-label">Total Harga</label>
+            <div class="col-sm-9">
+                <div class="form-control" id="totalHarga">Rp. {{ $item_pemesanan["total_harga"] }}</div>
             </div>
         </div>
         <div class="form-group row">
             <label for="metodePembayaran" class="col-sm-3 col-form-label">Metode Pembayaran</label>
             <div class="col-sm-9">
-                <div class="form-control" id="metodePembayaran">Transfer Bank</div>
+                <div class="form-control" id="metodePembayaran">{{ $item_pemesanan["metode_bayar"] }}</div>
             </div>
         </div>
         <div class="form-group row">
             <label for="buktiPembayaran" class="col-sm-3 col-form-label">Bukti Pembayaran</label>
             <div class="col-sm-9">
-                <div class="form-control lihat-bukti-pembayaran" data-toggle="modal" data-placement="top" title="Bukti Pembayaran" data-target="#lihatBuktiPembayaranModal">Lihat bukti pembayaran</div>
+                <div class="form-control lihat-bukti-pembayaran" data-toggle="modal" data-placement="top" title="Bukti Pembayaran" data-target="#lihatBuktiPembayaranModal{{ $item_pemesanan["bukti_bayar"] }}">Lihat bukti pembayaran</div>
             </div>
         </div>
         <div class="form-group row">
             <label for="statusPembayaran" class="col-sm-3 col-form-label">Status Pembayaran</label>
             <div class="col-sm-3">
-                <div class="form-control badge badge-pill badge-warning px-3 py-2" id="statusPembayaran">Menunggu Konfirmasi</div>
+                <div class="form-control badge badge-pill badge-warning px-3 py-2" id="statusPembayaran">{{ $item_pemesanan["status_bayar"] }}</div>
             </div>
         </div>
         <div class="d-flex justify-content-between mt-4">
             <a href="{{ route('admin.pemesanan') }}" class="btn btn-secondary" >Keluar</a>
             <button class="btn btn-primary" type="submit">Konfirmasi Pemesanan</button>
         </div>
-
     </div>
 
 </div>
 
 <!-- Modal Lihat Bukti Pembayaran -->
-<div class="modal fade" id="lihatBuktiPembayaranModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="lihatBuktiPembayaranModal{{ $item_pemesanan["bukti_bayar"] }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
         <div class="modal-header">

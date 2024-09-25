@@ -21,8 +21,8 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead class="text-center">
                         <tr>
-                            <th>Tanggal Keberangkatan</th>
-                            <th>Jam Keberangkatan</th>
+                            <th>Tanggal Berangkat</th>
+                            <th>Jam Berangkat</th>
                             <th>Asal</th>
                             <th>Tujuan</th>
                             <th>Kendaraan</th>
@@ -30,13 +30,13 @@
                             <th>Jumlah Kursi</th>
                             <th>Kursi dipesan</th>
                             <th>Harga</th>
-                            <th>Aksi</th>
+                            <th style="min-width: 50px">Aksi</th>
                         </tr>
                     </thead>
                     <tfoot class="text-center">
                         <tr>
-                            <th>Tanggal Keberangkatan</th>
-                            <th>Jam Keberangkatan</th>
+                            <th>Tanggal Berangkat</th>
+                            <th>Jam Berangkat</th>
                             <th>Asal</th>
                             <th>Tujuan</th>
                             <th>Kendaraan</th>
@@ -50,7 +50,7 @@
                     <tbody>
                         @foreach ($data_jadwal as $item_jadwal)
                         <tr class="text-center">
-                            <td>{{ $item_jadwal["tanggal_berangkat"] }}</td>
+                            <td>{{ date('d/m/Y', strtotime($item_jadwal["tanggal_berangkat"])) }}</td>
                             <td>{{ $item_jadwal["jam_berangkat"] }}</td>
                             <td>{{ $item_jadwal["asal"] }}</td>
                             <td>{{ $item_jadwal["tujuan"] }}</td>

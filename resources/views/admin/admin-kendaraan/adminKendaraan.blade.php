@@ -21,20 +21,20 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead class="text-center">
                         <tr>
-                            <th>Kode Kendaraan</th>
+                            <th>Kode <br> Kendaraan</th>
                             <th>Nomor Plat</th>
                             <th>Tipe</th>
-                            <th>Kapasitas Penumpang</th>
+                            <th>Kapasitas <br> Penumpang</th>
                             <th>Keterangan</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tfoot class="text-center">
                         <tr>
-                            <th>Kode Kendaraan</th>
+                            <th>Kode <br> Kendaraan</th>
                             <th>Nomor Plat</th>
                             <th>Tipe</th>
-                            <th>Kapasitas Penumpang</th>
+                            <th>Kapasitas <br> Penumpang</th>
                             <th>Keterangan</th>
                             <th>Aksi</th>
                         </tr>
