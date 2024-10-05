@@ -93,8 +93,7 @@ Route::get('/admin', function () {
 Route::get('/admin/kelola-pemesanan', [PemesananController::class, 'index'])->name('admin.pemesanan');
 
 // Route::get('/admin/kelola-pemesanan/detail-pemesanan', function () {
-Route::get('kelola-pemesanan/{slug}', [PemesananController::class, 'show']);
-// ->name('admin.detailPemesanan');
+Route::get('/admin/kelola-pemesanan/{pemesanan:slug}', [PemesananController::class, 'show'])->name('admin.detailPemesanan');
 
 Route::get('/admin/kelola-jadwal-perjalanan', [JadwalController::class, 'index'])->name('admin.jadwalPerjalanan');
 

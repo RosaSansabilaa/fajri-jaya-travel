@@ -145,7 +145,7 @@
                 <form id="tambahDataKendaraanForm" method="post" enctype="multipart/form-data">                           
                     <div class="mb-3">
                         <label for="kodeKendaraan" class="form-label">Kode Kendaraan</label>
-                        <input type="text" name="kodeKendaraan" class="form-control" id="kodeKendaraan" autocomplete="off" value="{{ $item_kendaraan["kendaraan_id"] +1 }}" placeholder="" readonly>
+                        <input type="text" name="kodeKendaraan" class="form-control" id="kodeKendaraan" autocomplete="off" value="" placeholder="" readonly>
                     </div>
                     <div class="mb-3">
                         <label for="nomorPlat" class="form-label">Nomor Plat</label>

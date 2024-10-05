@@ -5,34 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Kendaraan
+class Kendaraan extends Model
 {
-    private static $kendaraan = [
-        [
-            "kendaraan_id" => "1",
-            "nomor_plat" => "EA1234DW",
-            "tipe" => "Jetbus",
-            "kapasitas" => "15",
-            "keterangan" => "Contoh keterangan"
-        ],
-        [
-            "kendaraan_id" => "2",
-            "nomor_plat" => "EA1334DW",
-            "tipe" => "Jetbus",
-            "kapasitas" => "15",
-            "keterangan" => "Contoh keterangan"
-        ],
-        [
-            "kendaraan_id" => "3",
-            "nomor_plat" => "EA1334AA",
-            "tipe" => "Jetbus",
-            "kapasitas" => "15",
-            "keterangan" => "Contoh keterangan"
-        ]
-    ];
+    use HasFactory;
 
-    public static function all()
+    public $timestamps = false;
+    
+    protected $guarded = ['id'];
+
+    public function Jadwal()
     {
-        return collect(self::$kendaraan);
+        return $this->hasMany(Jadwal::class);
     }
 }

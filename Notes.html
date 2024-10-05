@@ -1,0 +1,103 @@
+Pemesanan::create([
+    'tanggal_berangkat' => '2024-07-12',
+    'jam_berangkat' => '12:00',
+    'asal' => 'Taliwang',
+    'tujuan' => 'Mataram',
+    'nama_pemesan' => 'Fufufafa'
+])
+
+$pemesanan->create([
+    'tanggal_berangkat' => '2024-07-12',
+    'jam_berangkat' => '12:00',
+    'asal' => 'Taliwang',
+    'tujuan' => 'Mataram',
+    'nama_pemesan' => 'Fufufafa',
+    'slug' => 'fufufafa'
+])
+
+$pemesanan->create([
+    'tanggal_berangkat' => '2024-09-14',
+    'jam_berangkat' => '12:20',
+    'asal' => 'Sumbawa Besar',
+    'tujuan' => 'Mataram',
+    'nama_pemesan' => 'Putra Mulyono',
+    'slug' => 'putra-mulyono'
+])
+
+$jadwal->create([
+    'tanggal_berangkat' => '2024-09-14',
+    'jam_berangkat' => '12:20',
+    'asal' => 'Sumbawa Besar',
+    'tujuan' => 'Mataram',
+    'kendaraan' => 'EA1234DA',
+    'supir' => 'Budi',
+    'kapasitas' => '15',
+    'kursi_dipesan' => '0',
+    'harga' => '120000'
+])
+
+$jadwal->create([
+    'tanggal_berangkat' => '2024-10-01',
+    'jam_berangkat' => '10:00',
+    'asal' => 'Mataram',
+    'tujuan' => 'Taliwang',
+    'kendaraan' => 'EA5728HG',
+    'supir' => 'Surya',
+    'kapasitas' => '15',
+    'kursi_dipesan' => '0',
+    'harga' => '240000'
+])
+
+$jadwal->create([
+    'tanggal_berangkat' => '2024-09-09',
+    'jam_berangkat' => '08:00',
+    'asal' => 'Mataram',
+    'tujuan' => 'Taliwang',
+    'kendaraan' => 'EA1234DA',
+    'supir' => 'Surya',
+    'kapasitas' => '15',
+    'kursi_dipesan' => '4',
+    'harga' => '120000,
+])
+
+$jadwal->create([
+    'tanggal_berangkat' => '2024-10-01',
+    'jam_berangkat' => '10:30',
+    'asal' => 'Sumbawa Besar',
+    'tujuan' => 'Mataram',
+    'kendaraan' => 'EA5728HG',
+    'supir' => 'Brando',
+    'kapasitas' => '15',
+    'kursi_dipesan' => '1',
+    'harga' => '240000,
+])
+
+$kendaraan->create([
+    'nomor_plat' => 'EA1234DA',
+    'tipe' => 'Jetbus',
+    'kapasitas' => '15',
+    'keterangan' => 'Putih'
+])
+
+$kendaraan->create([
+    'nomor_plat' => 'EA5728HG',
+    'tipe' => 'Jetbus',
+    'kapasitas' => '15',
+    'keterangan' => 'Kuning'
+])
+
+$supir->create([
+    'nama' => 'Dido',
+    'no_hp' => '085271736661',
+    'alamat' => 'Mataram',
+    'username' => 'didosupir',
+    'password' => 'dido1234'
+])
+
+$supir->create([
+    'nama' => 'Bambang',
+    'no_hp' => '085271736661',
+    'alamat' => 'Sumbawa Besar',
+    'username' => 'bambangsupir',
+    'password' => 'bambang1234'
+])

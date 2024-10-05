@@ -15,11 +15,11 @@ class PemesananController extends Controller
         ]);
     }
 
-    public function show($slug)
+    public function show(Pemesanan $pemesanan) //Pemesanan -> nama model, $pemesanan -> harus sama dengan yang ada pada route
     {
         return view('admin.admin-pemesanan.adminDetailPemesanan', [
             "title" => "Admin Kelola Pemesanan",
-            "item_pemesanan" => Pemesanan::find($slug)
+            "item_pemesanan" => $pemesanan
         ]);
     }
 }

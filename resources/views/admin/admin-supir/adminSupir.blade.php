@@ -44,20 +44,20 @@
                     <tbody>
                         @foreach ($data_supir as $item_supir)
                             <tr class="text-center">
-                                <td>{{ $item_supir["supir_id"] }}</td>
-                                <td>{{ $item_supir["nama"] }}</td>
-                                <td>{{ $item_supir["no_hp"] }}</td>
-                                <td>{{ $item_supir["alamat"] }}</td>
-                                <td>{{ $item_supir["username"] }}</td>
-                                <td>{{ $item_supir["password"] }}</td>
+                                <td>{{ $item_supir->supir_id }}</td>
+                                <td>{{ $item_supir->nama }}</td>
+                                <td>{{ $item_supir->no_hp }}</td>
+                                <td>{{ $item_supir->alamat }}</td>
+                                <td>{{ $item_supir->username }}</td>
+                                <td>{{ $item_supir->password }}</td>
                                 <td>
-                                    <a href="#" class="btn btn-secondary btn-sm" data-toggle="modal" data-placement="top" title="Edit Data Kendaraan" data-target="#ubahDataSupirModal{{ $item_supir["supir_id"] }}"><i class="fas fa-edit fa-sm"></i></a>
-                                    <a href="#" class="btn btn-danger btn-sm" data-toggle="modal" data-placement="top" title="Hapus Data Kendaraan"  data-target="#hapusDataSupirModal{{ $item_supir["supir_id"] }}"><i class="fas fa-trash fa-sm"></i></a>
+                                    <a href="#" class="btn btn-secondary btn-sm" data-toggle="modal" data-placement="top" title="Edit Data Kendaraan" data-target="#ubahDataSupirModal{{ $item_supir->supir_id }}"><i class="fas fa-edit fa-sm"></i></a>
+                                    <a href="#" class="btn btn-danger btn-sm" data-toggle="modal" data-placement="top" title="Hapus Data Kendaraan"  data-target="#hapusDataSupirModal{{ $item_supir->supir_id }}"><i class="fas fa-trash fa-sm"></i></a>
                                 </td>
                             </tr>
 
                             <!-- Modal Ubah Data Supir -->
-                            <div class="modal fade " id="ubahDataSupirModal{{ $item_supir["supir_id"] }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade " id="ubahDataSupirModal{{ $item_supir->supir_id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog " role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -70,27 +70,27 @@
                                             <form id="ubahDataSupirForm" method="post" enctype="multipart/form-data"> 
                                                 <div class="mb-3">
                                                     <label for="kodeSupir" class="form-label">Kode Supir</label>
-                                                    <input type="text" name="kodeSupir" class="form-control" id="kodeSupir" autocomplete="off" value="{{ $item_supir["supir_id"] }}" placeholder="" readonly>
+                                                    <input type="text" name="kodeSupir" class="form-control" id="kodeSupir" autocomplete="off" value="{{ $item_supir->supir_id }}" placeholder="" readonly>
                                                 </div>                          
                                                 <div class="mb-3">
                                                     <label for="namaSupir" class="form-label">Nama</label>
-                                                    <input type="text" name="namaSupir" class="form-control" id="namaSupir" autocomplete="off" value="{{ $item_supir["nama"] }}" placeholder="" required>
+                                                    <input type="text" name="namaSupir" class="form-control" id="namaSupir" autocomplete="off" value="{{ $item_supir->nama }}" placeholder="" required>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="nomorTelepon" class="form-label">Nomor Telepon</label>
-                                                    <input type="text" name="nomorTelepon" class="form-control" id="nomorTelepon" autocomplete="off" value="{{ $item_supir["no_hp"] }}" placeholder="" required>
+                                                    <input type="text" name="nomorTelepon" class="form-control" id="nomorTelepon" autocomplete="off" value="{{ $item_supir->no_hp }}" placeholder="" required>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="alamatSupir" class="form-label">Alamat</label>
-                                                    <textarea class="form-control" name="alamatSupir" id="alamatSupir" aria-label="With textarea" value="{{ $item_supir["alamat"] }}" placeholder=""></textarea>
+                                                    <textarea class="form-control" name="alamatSupir" id="alamatSupir" aria-label="With textarea" value="{{ $item_supir->alamat }}" placeholder=""></textarea>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="namaPenggunaSupir" class="form-label">Nama Pengguna</label>
-                                                    <input type="text" name="namaPenggunaSupir" class="form-control" id="namaPenggunaSupir" autocomplete="off" value="{{ $item_supir["username"] }}" placeholder="">
+                                                    <input type="text" name="namaPenggunaSupir" class="form-control" id="namaPenggunaSupir" autocomplete="off" value="{{ $item_supir->username }}" placeholder="">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="kataSandiSupir" class="form-label">Kata Sandi</label>
-                                                    <input type="text" name="kataSandiSupir" class="form-control" id="kataSandiSupir" autocomplete="off" value="{{ $item_supir["password"] }}" placeholder="">
+                                                    <input type="text" name="kataSandiSupir" class="form-control" id="kataSandiSupir" autocomplete="off" value="{{ $item_supir->password }}" placeholder="">
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
@@ -104,7 +104,7 @@
                             <!-- Akhir Modal Ubah Data Supir -->
 
                             <!-- Modal Hapus Data Supir -->
-                            <div class="modal fade" id="hapusDataSupirModal{{ $item_supir["supir_id"] }}" tabindex="-1" role="dialog" aria-labelledby="hapusDataSupirLabel" aria-hidden="true">
+                            <div class="modal fade" id="hapusDataSupirModal{{ $item_supir->supir_id }}" tabindex="-1" role="dialog" aria-labelledby="hapusDataSupirLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -153,7 +153,7 @@
                 <form id="tambahDataSupirForm" method="post" enctype="multipart/form-data"> 
                     <div class="mb-3">
                         <label for="kodeSupir" class="form-label">Kode Supir</label>
-                        <input type="text" name="kodeSupir" class="form-control" id="kodeSupir" autocomplete="off" value="{{ $item_supir["supir_id"] +1 }}" placeholder="" readonly>
+                        <input type="text" name="kodeSupir" class="form-control" id="kodeSupir" autocomplete="off" value="" placeholder="" readonly>
                     </div>                          
                     <div class="mb-3">
                         <label for="namaSupir" class="form-label">Nama</label>
