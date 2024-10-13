@@ -93,6 +93,18 @@
   color: #364b8b; /* Warna teks saat dihover */
 }
 
+#status-pemesanan.confirmed-status {
+  background-color: #24ac7a;
+}
+
+#status-pemesanan.pending-status {
+  background-color: #dba51a;
+}
+
+#status-pemesanan.cancel-status {
+  background-color: #e74a3b;
+}
+
 
 
 

@@ -40,21 +40,21 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        @foreach ($data_kendaraan as $item_kendaraan)
+                        @foreach ($kendaraans as $kendaraan)
                             <tr class="text-center">
-                                <td>{{ $item_kendaraan["kendaraan_id"] }}</td>
-                                <td>{{ $item_kendaraan["nomor_plat"] }}</td>
-                                <td>{{ $item_kendaraan["tipe"] }}</td>
-                                <td>{{ $item_kendaraan["kapasitas"] }}</td>
-                                <td>{{ $item_kendaraan["keterangan"] }}</td>
+                                <td>{{ $kendaraan->id }}</td>
+                                <td>{{ $kendaraan->nomor_plat }}</td>
+                                <td>{{ $kendaraan->tipe }}</td>
+                                <td>{{ $kendaraan->kapasitas }}</td>
+                                <td>{{ $kendaraan->keterangan }}</td>
                                 <td>
-                                    <a href="#" class="btn btn-secondary btn-sm" data-toggle="modal" data-placement="top" title="Edit Data Kendaraan" data-target="#ubahDataKendaraanModal{{ $item_kendaraan["kendaraan_id"] }}"><i class="fas fa-edit fa-sm"></i></a>
-                                    <a href="#" class="btn btn-danger btn-sm" data-toggle="modal" data-placement="top" title="Hapus Data Kendaraan"  data-target="#hapusDataKendaraanModal{{ $item_kendaraan["kendaraan_id"] }}"><i class="fas fa-trash fa-sm"></i></a>
+                                    <a href="#" class="btn btn-secondary btn-sm" data-toggle="modal" data-placement="top" title="Edit Data Kendaraan" data-target="#ubahDataKendaraanModal{{ $kendaraan->id }}"><i class="fas fa-edit fa-sm"></i></a>
+                                    <a href="#" class="btn btn-danger btn-sm" data-toggle="modal" data-placement="top" title="Hapus Data Kendaraan"  data-target="#hapusDataKendaraanModal{{ $kendaraan->id }}"><i class="fas fa-trash fa-sm"></i></a>
                                 </td>
                             </tr>
 
                             <!-- Modal Ubah Data Kendaraan -->
-                            <div class="modal fade " id="ubahDataKendaraanModal{{ $item_kendaraan["kendaraan_id"] }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade " id="ubahDataKendaraanModal{{ $kendaraan->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog " role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -67,23 +67,23 @@
                                             <form id="ubahDataKendaraanForm" method="post" enctype="multipart/form-data">                           
                                                 <div class="mb-3">
                                                     <label for="kodeKendaraan" class="form-label">Kode Kendaraan</label>
-                                                    <input type="text" name="kodeKendaraan" class="form-control" id="kodeKendaraan" autocomplete="off" value="{{ $item_kendaraan["kendaraan_id"] }}" placeholder="" readonly>
+                                                    <input type="text" name="kodeKendaraan" class="form-control" id="kodeKendaraan" autocomplete="off" value="{{ $kendaraan->id }}" placeholder="" readonly>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="nomorPlat" class="form-label">Nomor Plat</label>
-                                                    <input type="text" name="nomorPlat" class="form-control" id="nomorPlat" autocomplete="off" value="{{ $item_kendaraan["nomor_plat"] }}" placeholder="" required>
+                                                    <input type="text" name="nomorPlat" class="form-control" id="nomorPlat" autocomplete="off" value="{{ $kendaraan->nomor_plat }}" placeholder="" required>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="tipeKendaraan" class="form-label">Tipe</label>
-                                                    <input type="text" class="form-control" name="tipeKendaraan" id="tipeKendaraan" autocomplete="off" value="{{ $item_kendaraan["tipe"] }}" placeholder="">
+                                                    <input type="text" class="form-control" name="tipeKendaraan" id="tipeKendaraan" autocomplete="off" value="{{ $kendaraan->tipe }}" placeholder="">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="kapasitasPenumpang" class="form-label">Kapasitas Penumpang</label>
-                                                    <input type="number" name="kapasitasPenumpang" class="form-control" id="kapasitasPenumpang" autocomplete="off" value="{{ $item_kendaraan["kapasitas"] }}" placeholder="">
+                                                    <input type="number" name="kapasitasPenumpang" class="form-control" id="kapasitasPenumpang" autocomplete="off" value="{{ $kendaraan->kapasitas }}" placeholder="">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="keterangan" class="form-label">Keterangan</label>
-                                                    <input type="text" name="keterangan" class="form-control" id="keterangan" autocomplete="off" value="{{ $item_kendaraan["keterangan"] }}" placeholder="">
+                                                    <input type="text" name="keterangan" class="form-control" id="keterangan" autocomplete="off" value="{{ $kendaraan->keterangan }}" placeholder="">
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
@@ -97,7 +97,7 @@
                             <!-- Akhir Modal Ubah Data Kendaraan -->
 
                             <!-- Modal Hapus Data Kendaraan -->
-                            <div class="modal fade" id="hapusDataKendaraanModal{{ $item_kendaraan["kendaraan_id"] }}" tabindex="-1" role="dialog" aria-labelledby="hapusDataKendaraanLabel" aria-hidden="true">
+                            <div class="modal fade" id="hapusDataKendaraanModal{{ $kendaraan->id }}" tabindex="-1" role="dialog" aria-labelledby="hapusDataKendaraanLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">

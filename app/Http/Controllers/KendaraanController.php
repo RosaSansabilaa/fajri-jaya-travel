@@ -11,7 +11,7 @@ class KendaraanController extends Controller
     {
         return view('admin.admin-kendaraan.adminKendaraan', [
             "title" => "Admin Kelola Kendaraan",
-            "data_kendaraan" => Kendaraan::all()
+            "kendaraans" => Kendaraan::all()
         ]);
     }
 }

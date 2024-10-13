@@ -11,7 +11,8 @@ class PemesananController extends Controller
     {
         return view('admin.admin-pemesanan.adminPemesanan', [
             "title" => "Admin Kelola Pemesanan",
-            "data_pemesanan" => Pemesanan::all()
+            "data_pemesanan" => Pemesanan::all(),
+            'status_pemesanan' => 'Menunggu konfirmasi' // Set status default
         ]);
     }
 
@@ -19,7 +20,8 @@ class PemesananController extends Controller
     {
         return view('admin.admin-pemesanan.adminDetailPemesanan', [
             "title" => "Admin Kelola Pemesanan",
-            "item_pemesanan" => $pemesanan
+            "item_pemesanan" => $pemesanan,
+            'status_pemesanan' => 'Menunggu konfirmasi' // Set status default
         ]);
     }
 }

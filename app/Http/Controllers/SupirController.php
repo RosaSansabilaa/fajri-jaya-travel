@@ -11,7 +11,7 @@ class SupirController extends Controller
     {
         return view('admin.admin-supir.adminSupir', [
             "title" => "Admin Kelola Supir",
-            "data_supir" => Supir::all()
+            "supirs" => Supir::all()
         ]);
     }
 }

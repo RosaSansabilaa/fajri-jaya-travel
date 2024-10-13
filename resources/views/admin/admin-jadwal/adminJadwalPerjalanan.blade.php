@@ -23,8 +23,8 @@
                         <tr>
                             <th>Tanggal Berangkat</th>
                             <th>Jam Berangkat</th>
-                            <th>Asal</th>
-                            <th>Tujuan</th>
+                            <th style="min-width: 100px">Asal</th>
+                            <th style="min-width: 100px">Tujuan</th>
                             <th>Kendaraan</th>
                             <th>Supir</th>
                             <th>Jumlah Kursi</th>
@@ -48,126 +48,127 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        @foreach ($data_jadwal as $item_jadwal)
-                        <tr class="text-center">
-                            <td>{{ date('d/m/Y', strtotime($item_jadwal->tanggal_berangkat)) }}</td>
-                            <td>{{ $item_jadwal->jam_berangkat }}</td>
-                            <td>{{ $item_jadwal->asal }}</td>
-                            <td>{{ $item_jadwal->tujuan }}</td>
-                            <td>{{ $item_jadwal->kendaraan }}</td>
-                            <td>{{ $item_jadwal->supir }}</td>
-                            <td>{{ $item_jadwal->kapasitas }}</td>
-                            <td>{{ $item_jadwal->kursi_dipesan }}</td>
-                            <td>{{ $item_jadwal->harga }}</td>
-                            <td>
-                                <a href="#" class="btn btn-secondary btn-sm" data-toggle="modal" data-placement="top" title="Edit Jadwal Perjalanan" data-target="#ubahJadwalPerjalananModal{{ $item_jadwal->jadwal_id }}"><i class="fas fa-edit fa-sm"></i></a>
-                                <a href="#" class="btn btn-danger btn-sm" data-toggle="modal" data-placement="top" title="Hapus Jadwal Perjalanan"  data-target="#hapusJadwalPerjalananModal{{ $item_jadwal->jadwal_id }}"><i class="fas fa-trash fa-sm"></i></a>
-                            </td>
-                        </tr>
-                        
-                        <!-- Modal Ubah Jadwal Perjalanan -->
-                        <div class="modal fade " id="ubahJadwalPerjalananModal{{ $item_jadwal->jadwal_id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog " role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Ubah Jadwal Perjalanan</h5>
-                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span> 
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form id="ubahJadwalPerjalananForm" method="post" enctype="multipart/form-data">                           
-                                            <div class="mb-3">
-                                                <label for="tanggalKeberangkatan" class="form-label">Tanggal Keberangkatan</label>
-                                                <input type="date" name="tanggalKeberangkatan" class="form-control" id="tanggalKeberangkatan" autocomplete="off" value="{{ $item_jadwal->tanggal_berangkat }}" placeholder="" required>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="jamKeberangkatan" class="form-label">Jam Keberangkatan</label>
-                                                <input type="time" name="jamKeberangkatan" class="form-control" id="jamKeberangkatan" autocomplete="off" value="{{ $item_jadwal->jam_berangkat }}" placeholder="" required>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="asal" class="form-label">Asal</label>
-                                                <select class="form-control" name="asal" id="asal" required>
-                                                    <option value="mataram" {{ $item_jadwal->asal == 'Mataram' ? 'selected' : '' }}>Mataram</option>
-                                                    <option value="taliwang" {{ $item_jadwal->asal == 'Taliwang' ? 'selected' : '' }}>Taliwang</option>
-                                                    <option value="sumbawa-besar" {{ $item_jadwal->asal == 'Sumbawa Besar' ? 'selected' : '' }}>Sumbawa Besar</option>
-                                                </select>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="tujuan" class="form-label">Tujuan</label>
-                                                <select class="form-control" name="tujuan" id="tujuan" required>
-                                                    <option value="mataram" {{ $item_jadwal->tujuan == 'Mataram' ? 'selected' : '' }}>Mataram</option>
-                                                    <option value="taliwang" {{ $item_jadwal->tujuan == 'Taliwang' ? 'selected' : '' }}>Taliwang</option>
-                                                    <option value="sumbawa-besar" {{ $item_jadwal->tujuan == 'Sumbawa Besar' ? 'selected' : '' }}>Sumbawa Besar</option>
-                                                </select>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="nomorPlat" class="form-label">Nomor Plat Kendaraan</label>
-                                                <select class="form-control" name="nomorPlat" id="nomorPlat" required>
-                                                    {{-- <option value="{{ $item_jadwal->kendaraan }}">{{ $item_jadwal->kendaraan }}</option> --}}
-                                                    @foreach ($data_jadwal as $item_jadwal)
-                                                        <option value="{{ $item_jadwal->kendaraan }}">{{ $item_jadwal->kendaraan }}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="namaSupir" class="form-label">Nama Supir</label>
-                                                <select class="form-control" name="namaSupir" id="namaSupir">
-                                                    {{-- <option value="">{{ $item_jadwal->supir }}</option> --}}
-                                                    @foreach ($data_jadwal as $item_jadwal)
-                                                        <option value="{{ $item_jadwal->supir }}">{{ $item_jadwal->supir }}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="kapasitasPenumpang" class="form-label">Jumlah Kursi</label>
-                                                <input type="text" name="jumlahKursi" class="form-control" id="jumlahKursi" autocomplete="off" value="{{ $item_jadwal->kapasitas }}" placeholder="" readonly>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="kursiDipesan" class="form-label">Jumlah Kursi Dipesan</label>
-                                                <input type="text" name="kursiDipesan" class="form-control" id="kursiDipesan" autocomplete="off" value="{{ $item_jadwal->kursi_dipesan }}" placeholder="" readonly>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="hargaTiket" class="form-label">Harga</label>
-                                                <input type="number" name="hargaTiket" class="form-control" id="hargaTiket" autocomplete="off" value="{{ $item_jadwal->harga }}" step="10000" min="0" placeholder="" required>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-                                                <button class="btn btn-primary" type="submit">Simpan</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Akhir Modal Ubah Jadwal Perjalanan -->
-
-                        <!-- Modal Hapus Jadwal Perjalanan -->
-                        <div class="modal fade" id="hapusJadwalPerjalananModal{{ $item_jadwal->jadwal_id }}" tabindex="-1" role="dialog" aria-labelledby="hapusJadwalPerjalananLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="hapusJadwalPerjalananLabel">Konfirmasi Hapus Jadwal Perjalanan</h5>
-                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Apakah Anda yakin ingin menghapus jadwal perjalanan?
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-                                        <form id="formHapusJadwalPerjalanan" method="post" action="">
-                                            @csrf   <!-- Menyertakan token CSRF untuk keamanan -->
-                                            @method('DELETE')
-                                            <button class="btn btn-danger" type="">Hapus</button>
-                                        </form>
+                        @foreach ($jadwals as $jadwal)
+                            <tr class="text-center">
+                                <td>{{ date('d/m/Y', strtotime($jadwal->tanggal_berangkat)) }}</td>
+                                <td>{{ $jadwal->jam_berangkat }}</td>
+                                <td>{{ $jadwal->asal }}</td>
+                                <td>{{ $jadwal->tujuan }}</td>
+                                <td>{{ optional($jadwal->kendaraan)->nomor_plat }}</td>
+                                <td>{{ optional($jadwal->supir)->nama }}</td>
+                                {{-- <td>{{ $jadwal->supir }}</td> --}}
+                                <td>{{ $jadwal->kapasitas }}</td>
+                                <td>{{ $jadwal->kursi_dipesan }}</td>
+                                <td>{{ $jadwal->harga }}</td>
+                                <td>
+                                    <a href="#" class="btn btn-secondary btn-sm" data-toggle="modal" data-placement="top" title="Edit Jadwal Perjalanan" data-target="#ubahJadwalPerjalananModal{{ $jadwal->jadwal_id }}"><i class="fas fa-edit fa-sm"></i></a>
+                                    <a href="#" class="btn btn-danger btn-sm" data-toggle="modal" data-placement="top" title="Hapus Jadwal Perjalanan"  data-target="#hapusJadwalPerjalananModal{{ $jadwal->jadwal_id }}"><i class="fas fa-trash fa-sm"></i></a>
+                                </td>
+                            </tr>
+                            
+                            <!-- Modal Ubah Jadwal Perjalanan -->
+                            <div class="modal fade " id="ubahJadwalPerjalananModal{{ $jadwal->jadwal_id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog " role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Ubah Jadwal Perjalanan</h5>
+                                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span> 
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form id="ubahJadwalPerjalananForm" method="post" enctype="multipart/form-data">                           
+                                                <div class="mb-3">
+                                                    <label for="tanggalKeberangkatan" class="form-label">Tanggal Keberangkatan</label>
+                                                    <input type="date" name="tanggalKeberangkatan" class="form-control" id="tanggalKeberangkatan" autocomplete="off" value="{{ $jadwal->tanggal_berangkat }}" placeholder="" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="jamKeberangkatan" class="form-label">Jam Keberangkatan</label>
+                                                    <input type="time" name="jamKeberangkatan" class="form-control" id="jamKeberangkatan" autocomplete="off" value="{{ $jadwal->jam_berangkat }}" placeholder="" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="asal" class="form-label">Asal</label>
+                                                    <select class="form-control" name="asal" id="asal" required>
+                                                        <option value="mataram" {{ $jadwal->asal == 'Mataram' ? 'selected' : '' }}>Mataram</option>
+                                                        <option value="taliwang" {{ $jadwal->asal == 'Taliwang' ? 'selected' : '' }}>Taliwang</option>
+                                                        <option value="sumbawa-besar" {{ $jadwal->asal == 'Sumbawa Besar' ? 'selected' : '' }}>Sumbawa Besar</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="tujuan" class="form-label">Tujuan</label>
+                                                    <select class="form-control" name="tujuan" id="tujuan" required>
+                                                        <option value="mataram" {{ $jadwal->tujuan == 'Mataram' ? 'selected' : '' }}>Mataram</option>
+                                                        <option value="taliwang" {{ $jadwal->tujuan == 'Taliwang' ? 'selected' : '' }}>Taliwang</option>
+                                                        <option value="sumbawa-besar" {{ $jadwal->tujuan == 'Sumbawa Besar' ? 'selected' : '' }}>Sumbawa Besar</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="nomorPlat" class="form-label">Nomor Plat Kendaraan</label>
+                                                    <select class="form-control" name="nomorPlat" id="nomorPlat" required>
+                                                        {{-- <option value="{{ $jadwal->kendaraan }}">{{ $jadwal->kendaraan }}</option> --}}
+                                                        @foreach ($kendaraans as $kendaraan)
+                                                            <option value="{{ $kendaraan->id }}" {{ $jadwal->kendaraan_id == $kendaraan->id ? 'selected' : '' }}>{{ $kendaraan->nomor_plat }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="namaSupir" class="form-label">Nama Supir</label>
+                                                    <select class="form-control" name="supir_id" id="namaSupir">
+                                                        {{-- <option value="">{{ $jadwal->supir }}</option> --}}
+                                                        @foreach ($supirs as $supir)
+                                                            <option value="{{ $supir->id }}" {{ $jadwal->supir_id == $supir->id ? 'selected' : '' }}>{{ optional($jadwal->supir)->nama }}</option>
+                                                            {{-- <option value="{{ $jadwal->supir_id }}" {{ $jadwal->supir_id === optional($jadwal->supir)->id ? 'selected' : '' }}>{{ optional($jadwal->supir)->nama }}</option> --}}
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="kapasitasPenumpang" class="form-label">Jumlah Ketersediaan Kursi</label>
+                                                    <input type="text" name="jumlahKursi" class="form-control" id="jumlahKursi" autocomplete="off" value="{{ $jadwal->kapasitas }}" placeholder="" readonly>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="kursiDipesan" class="form-label">Jumlah Kursi yang Telah Dipesan</label>
+                                                    <input type="text" name="kursiDipesan" class="form-control" id="kursiDipesan" autocomplete="off" value="{{ $jadwal->kursi_dipesan }}" placeholder="" readonly>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="hargaTiket" class="form-label">Harga</label>
+                                                    <input type="number" name="hargaTiket" class="form-control" id="hargaTiket" autocomplete="off" value="{{ $jadwal->harga }}" step="10000" min="0" placeholder="" required>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                                                    <button class="btn btn-primary" type="submit">Simpan</button>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            <!-- Akhir Modal Ubah Jadwal Perjalanan -->
 
-                        <!-- Akhir Modal Hapus JAdwal Perjalanan -->
+                            <!-- Modal Hapus Jadwal Perjalanan -->
+                            <div class="modal fade" id="hapusJadwalPerjalananModal{{ $jadwal->jadwal_id }}" tabindex="-1" role="dialog" aria-labelledby="hapusJadwalPerjalananLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="hapusJadwalPerjalananLabel">Konfirmasi Hapus Jadwal Perjalanan</h5>
+                                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Apakah Anda yakin ingin menghapus jadwal perjalanan?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                                            <form id="formHapusJadwalPerjalanan" method="post" action="">
+                                                @csrf   <!-- Menyertakan token CSRF untuk keamanan -->
+                                                @method('DELETE')
+                                                <button class="btn btn-danger" type="">Hapus</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Akhir Modal Hapus Jadwal Perjalanan -->
                         @endforeach
                     </tbody>
                 </table>
@@ -219,21 +220,23 @@
                         <label for="nomorPlat" class="form-label">Nomor Plat Kendaraan</label>
                         <select class="form-control" name="nomorPlat" id="nomorPlat" required>
                             <option selected disabled hidden>Pilih kendaraan yang akan digunakan</option>
-                            <option value="diisi data plat">diisi data plat</option>
-                            <option value="diisi data plat">diisi data plat</option>
+                            @foreach ($kendaraans as $kendaraan)
+                                <option value="{{ $kendaraan->id }}">{{ $kendaraan->nomor_plat }}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="mb-3">
                         <label for="namaSupir" class="form-label">Nama Supir</label>
-                        <select class="form-control" name="namaSupir" id="namaSupir">
+                        <select class="form-control" name="nama" id="namaSupir">
                             <option selected disabled hidden>Pilih nama supir</option>
-                            <option value="diisi nama supir">diisi nama supir</option>
-                            <option value="diisi nama supir">diisi nama supir</option>
+                            @foreach ($supirs as $supir)
+                                <option value="{{ $supir->id }}">{{ $supir->nama }}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="kapasitasPenumpang" class="form-label">Jumlah Ketersediaan Kursi</label>
-                        <input type="text" name="jumlahKursi" class="form-control" id="jumlahKursi" autocomplete="off" value="" placeholder="di sini auto ada jumlah kursi" readonly>
+                        <label for="kapasitasPenumpang" class="form-label">Kapasitas Penumpang</label>
+                        <input type="text" name="jumlahKursi" class="form-control" id="jumlahKursi" autocomplete="off" value="{{ $kendaraan->kapasitas }}" placeholder="Kapasitas Penumpang" readonly>
                     </div>
                     <div class="mb-3">
                         <label for="kursiDipesan" class="form-label">Jumlah Kursi yang telah dipesan</label>
@@ -247,7 +250,7 @@
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
                         <button class="btn btn-primary" type="submit">Simpan</button>
                     </div>
-                  </form>
+                </form>
             </div>
         </div>
     </div>

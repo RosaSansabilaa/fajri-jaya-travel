@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Jadwal;
+use App\Models\Kendaraan;
+use App\Models\Supir;
 
 class JadwalController extends Controller
 {
@@ -11,7 +13,9 @@ class JadwalController extends Controller
     {
         return view('admin.admin-jadwal.adminJadwalPerjalanan', [
             "title" => "Admin Kelola Jadwal Perjalanan",
-            "data_jadwal" => Jadwal::all()
+            "jadwals" => Jadwal::all(),
+            "kendaraans" => Kendaraan::all(),
+            "supirs" => Supir::all()
         ]);
     }
 }

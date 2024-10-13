@@ -57,7 +57,7 @@ $jadwal->create([
     'supir' => 'Surya',
     'kapasitas' => '15',
     'kursi_dipesan' => '4',
-    'harga' => '120000,
+    'harga' => '120000'
 ])
 
 $jadwal->create([
@@ -69,7 +69,31 @@ $jadwal->create([
     'supir' => 'Brando',
     'kapasitas' => '15',
     'kursi_dipesan' => '1',
-    'harga' => '240000,
+    'harga' => '240000'
+])
+
+$jadwal->create([
+    'kendaraan_id' => '1',
+    'supir_id' => '1',
+    'tanggal_berangkat' => '2024-10-01',
+    'jam_berangkat' => '10:30',
+    'asal' => 'Sumbawa Besar',
+    'tujuan' => 'Mataram',
+    'kapasitas' => '15',
+    'kursi_dipesan' => '1',
+    'harga' => '240000'
+])
+
+$jadwal->create([
+    'kendaraan_id' => '1',
+    'supir_id' => '2',
+    'tanggal_berangkat' => '2024-02-20',
+    'jam_berangkat' => '08:30',
+    'asal' => 'Sumbawa Besar',
+    'tujuan' => 'Mataram',
+    'kapasitas' => '15',
+    'kursi_dipesan' => '1',
+    'harga' => '240000'
 ])
 
 $kendaraan->create([

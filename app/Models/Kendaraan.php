@@ -13,7 +13,7 @@ class Kendaraan extends Model
     
     protected $guarded = ['id'];
 
-    public function Jadwal()
+    public function Jadwals()
     {
         return $this->hasMany(Jadwal::class);
     }

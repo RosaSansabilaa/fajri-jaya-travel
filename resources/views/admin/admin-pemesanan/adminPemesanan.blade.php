@@ -41,7 +41,7 @@
                             <th>Nama Pemesan</th>
                             <th>Jumlah Kursi</th>
                             <th>Total Harga</th>
-                            <th>Status Pembayaran</th>
+                            <th>Status Pemesanan</th>
                             <th>Aksi</th>
                         </tr>
                     </tfoot>
@@ -55,7 +55,7 @@
                             <td>{{ $item_pemesanan->nama_pemesan }}</td>
                             <td>{{ $item_pemesanan->jumlah_kursi }}</td>
                             <td>{{ $item_pemesanan->total_harga }}</td>
-                            <td>{{ $item_pemesanan->status_bayar }}</td>
+                            <td>{{ $item_pemesanan->status_pemesanan }}</td>
                             <td>
                                 <a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-placement="top" title="Konfirmasi Pemesanan" data-target="#konfirmasiPemesananModal{{ $item_pemesanan->pemesanan_id }}"><i class="fas fa-check fa-sm"></i></a>
                                 {{-- <a href="{{ route('admin.detailPemesanan', $item_pemesanan->pemesanan_id) }}" class="btn btn-secondary btn-sm" data-placement="top" title="Lihat Detail Pemesanan"><i class="fas fa-search fa-sm"></i></a> --}}
