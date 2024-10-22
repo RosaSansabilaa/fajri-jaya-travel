@@ -91,10 +91,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Pemesanan::create([
-            'tanggal_berangkat' => '2024-07-12',
-            'jam_berangkat' => '12:00',
-            'asal' => 'Taliwang',
-            'tujuan' => 'Mataram',
+            'jadwal_id' => '1',
             'nama_pemesan' => 'Fufufafa',
             'no_hp' => '081234514221',
             'email_pemesan' => 'chlipari@gmail.com',
@@ -110,10 +107,7 @@ class DatabaseSeeder extends Seeder
         ]);
         
         Pemesanan::create([
-            'tanggal_berangkat' => '2024-09-14',
-            'jam_berangkat' => '12:20',
-            'asal' => 'Sumbawa Besar',
-            'tujuan' => 'Mataram',
+            'jadwal_id' => '2',
             'nama_pemesan' => 'Putra Mulyono',
             'no_hp' => '081234514000',
             'email_pemesan' => 'mulyono@gmail.com',
@@ -127,5 +121,43 @@ class DatabaseSeeder extends Seeder
             'bukti_bayar' => '',
             'slug' => 'putra-mulyono'
         ]);
+
+        // Pemesanan::create([
+        //     'tanggal_berangkat' => '2024-07-12',
+        //     'jam_berangkat' => '12:00',
+        //     'asal' => 'Taliwang',
+        //     'tujuan' => 'Mataram',
+        //     'nama_pemesan' => 'Fufufafa',
+        //     'no_hp' => '081234514221',
+        //     'email_pemesan' => 'chlipari@gmail.com',
+        //     'jumlah_kursi' => '2',
+        //     'nomor_kursi' => '3, 4',
+        //     'nama_penumpang' => 'Raka, Gnarly',
+        //     'tanggal_pesan' => '2024-07-11',
+        //     'harga' => '240000',
+        //     'total_harga' => '480000',
+        //     'metode_bayar' => 'Tunai',
+        //     'bukti_bayar' => '',
+        //     'slug' => 'fufufafa'
+        // ]);
+        
+        // Pemesanan::create([
+        //     'tanggal_berangkat' => '2024-09-14',
+        //     'jam_berangkat' => '12:20',
+        //     'asal' => 'Sumbawa Besar',
+        //     'tujuan' => 'Mataram',
+        //     'nama_pemesan' => 'Putra Mulyono',
+        //     'no_hp' => '081234514000',
+        //     'email_pemesan' => 'mulyono@gmail.com',
+        //     'jumlah_kursi' => '1',
+        //     'nomor_kursi' => '1',
+        //     'nama_penumpang' => 'Mulyono',
+        //     'tanggal_pesan' => '2024-09-13',
+        //     'harga' => '120000',
+        //     'total_harga' => '120000',
+        //     'metode_bayar' => 'Transfer',
+        //     'bukti_bayar' => '',
+        //     'slug' => 'putra-mulyono'
+        // ]);
     }
 }

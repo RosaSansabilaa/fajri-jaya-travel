@@ -15,10 +15,12 @@ class CreatePemesanansTable extends Migration
     {
         Schema::create('pemesanans', function (Blueprint $table) {
             $table->id();
-            $table->date('tanggal_berangkat');
-            $table->time('jam_berangkat');
-            $table->enum('asal', ['Mataram', 'Sumbawa Besar', 'Taliwang']);
-            $table->enum('tujuan', ['Mataram', 'Sumbawa Besar', 'Taliwang']);
+            // $table->foreignId('customer_id')->constrained('customers')->onDelete('cascade');
+            // $table->date('tanggal_berangkat');
+            // $table->time('jam_berangkat');
+            // $table->enum('asal', ['Mataram', 'Sumbawa Besar', 'Taliwang']);
+            // $table->enum('tujuan', ['Mataram', 'Sumbawa Besar', 'Taliwang']);
+            $table->foreignId('jadwal_id')->onDelete('cascade');
             $table->string('nama_pemesan');
             $table->string('no_hp');
             $table->string('email_pemesan')->unique(); 

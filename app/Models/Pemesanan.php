@@ -12,10 +12,18 @@ class Pemesanan extends Model
     // Menonaktifkan timestamps (created_at, updated_at)
     public $timestamps = false;
 
-    // Mengubah nama kolom (created_at, updated_at)
-    // const CREATED_AT = 'tanggal_pemesanan';
-    // const UPDATED_AT = 'updated_date';
-
     // Mengatur properti apa saja yang tidak bisa diisi manual
     protected $guarded = ['id'];
+
+    // Menghubungkan dengan tabel jadwal perjalanan
+    public function Jadwal()
+    {
+        return $this->belongsTo(Jadwal::class, 'jadwal_id');
+    }
+
+    // Menghubungkan dengan tabel riwayat pemesanan
+    public function RiwayatPemesanan()
+    {
+        return $this->hasOne(RiwayatPemesanan::class, 'pemesanan_id');
+    }
 }

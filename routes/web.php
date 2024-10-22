@@ -95,6 +95,10 @@ Route::get('/admin/kelola-pemesanan', [PemesananController::class, 'index'])->na
 // Route::get('/admin/kelola-pemesanan/detail-pemesanan', function () {
 Route::get('/admin/kelola-pemesanan/{pemesanan:slug}', [PemesananController::class, 'show'])->name('admin.detailPemesanan');
 
+// Route untuk konfirmasi dan batal pemesanan
+Route::post('/admin/kelola-pemesanan/konfirmasi/{id}', [PemesananController::class, 'confirm'])->name('pemesanan.konfirmasi');
+Route::post('/admin/kelola-pemesanan/batal/{id}', [PemesananController::class, 'cancel'])->name('pemesanan.batal');
+
 Route::get('/admin/kelola-jadwal-perjalanan', [JadwalController::class, 'index'])->name('admin.jadwalPerjalanan');
 
 Route::get('/admin/kelola-data-kendaraan', [KendaraanController::class, 'index'])->name('admin.kendaraan');
@@ -102,6 +106,8 @@ Route::get('/admin/kelola-data-kendaraan', [KendaraanController::class, 'index']
 Route::get('/admin/kelola-data-supir', [SupirController::class, 'index'])->name('admin.supir');
 
 Route::get('/admin/riwayat-pemesanan', [RiwayatPemesananController::class, 'index'])->name('admin.riwayatPemesanan');
+
+// Route::get('/admin/riwayat-pemesanan/{pemesanan:slug}', [RiwayatPemesananController::class, 'show'])->name('admin.RiwayatDetailPemesanan');
 
 // Auth::routes();
 

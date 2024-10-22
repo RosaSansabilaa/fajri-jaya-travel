@@ -46,26 +46,45 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        @foreach ($data_pemesanan as $item_pemesanan)
+                        @foreach ($pemesanans as $pemesanan)
                         <tr class="text-center">
-                            <td>{{ date('d/m/Y', strtotime($item_pemesanan->tanggal_berangkat)) }}</td>
-                            <td>{{ $item_pemesanan->jam_berangkat }}</td>
-                            <td>{{ $item_pemesanan->asal }}</td>
-                            <td>{{ $item_pemesanan->tujuan }}</td>
-                            <td>{{ $item_pemesanan->nama_pemesan }}</td>
-                            <td>{{ $item_pemesanan->jumlah_kursi }}</td>
-                            <td>{{ $item_pemesanan->total_harga }}</td>
-                            <td>{{ $item_pemesanan->status_pemesanan }}</td>
+                            {{-- <td>{{ date('d/m/Y', strtotime($pemesanan->tanggal_berangkat)) }}</td>
+                            <td>{{ $pemesanan->jam_berangkat }}</td>
+                            <td>{{ $pemesanan->asal }}</td>
+                            <td>{{ $pemesanan->tujuan }}</td> --}}
+                            <td>{{ optional($pemesanan->jadwal)->tanggal_berangkat }}</td>
+                            <td>{{ optional($pemesanan->jadwal)->jam_berangkat }}</td>
+                            <td>{{ optional($pemesanan->jadwal)->asal }}</td>
+                            <td>{{ optional($pemesanan->jadwal)->tujuan }}</td>
+                            <td>{{ $pemesanan->nama_pemesan }}</td>
+                            <td>{{ $pemesanan->jumlah_kursi }}</td>
+                            <td>{{ $pemesanan->total_harga }}</td>
+                            {{-- <td>{{ $pemesanan->status_pemesanan }}</td> --}}
                             <td>
-                                <a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-placement="top" title="Konfirmasi Pemesanan" data-target="#konfirmasiPemesananModal{{ $item_pemesanan->pemesanan_id }}"><i class="fas fa-check fa-sm"></i></a>
-                                {{-- <a href="{{ route('admin.detailPemesanan', $item_pemesanan->pemesanan_id) }}" class="btn btn-secondary btn-sm" data-placement="top" title="Lihat Detail Pemesanan"><i class="fas fa-search fa-sm"></i></a> --}}
-                                <a href="/admin/kelola-pemesanan/{{ $item_pemesanan->slug }}" class="btn btn-secondary btn-sm" data-placement="top" title="Lihat Detail Pemesanan"><i class="fas fa-search fa-sm"></i></a>
-                                <a href="#" class="btn btn-danger btn-sm" data-toggle="modal" data-placement="top" title="Hapus Pemesanan"  data-target="#hapusPemesananModal{{ $item_pemesanan->pemesanan_id }}"><i class="fas fa-trash fa-sm"></i></a>
+                                @if($pemesanan->status_pemesanan == 'Menunggu konfirmasi')
+                                    <span class="badge badge-pill badge-warning">Menunggu konfirmasi</span>
+                                @elseif($pemesanan->status_pemesanan == 'Terkonfirmasi')
+                                    <span class="badge badge-pill badge-success">Terkonfirmasi</span>
+                                @elseif($pemesanan->status_pemesanan == 'Dibatalkan')
+                                    <span class="badge badge-pill badge-danger">Dibatalkan</span>
+                                @endif
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-placement="top" title="Konfirmasi Pemesanan" data-target="#konfirmasiPemesananModal{{ $pemesanan->id }}">
+                                    <i class="fas fa-check fa-sm"></i>
+                                </button>
+                                {{-- <a href="{{ route('admin.detailPemesanan', $pemesanan->pemesanan_id) }}" class="btn btn-secondary btn-sm" data-placement="top" title="Lihat Detail Pemesanan"><i class="fas fa-search fa-sm"></i></a> --}}
+                                <a href="/admin/kelola-pemesanan/{{ $pemesanan->slug }}" class="btn btn-secondary btn-sm" data-placement="top" title="Lihat Detail Pemesanan">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </a>
+                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-placement="top" title="Hapus Pemesanan"  data-target="#hapusPemesananModal{{ $pemesanan->id }}">
+                                    <i class="fas fa-trash fa-sm"></i>
+                                </button>
                             </td>
                         </tr>
 
                         <!-- Modal Konfirmasi Pemesanan Tiket -->
-                        <div class="modal fade" id="konfirmasiPemesananModal{{ $item_pemesanan->pemesanan_id }}" tabindex="-1" role="dialog" aria-labelledby="konfirmasiPemesananLabel" aria-hidden="true">
+                        <div class="modal fade" id="konfirmasiPemesananModal{{ $pemesanan->id }}" tabindex="-1" role="dialog" aria-labelledby="konfirmasiPemesananLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -79,10 +98,10 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-                                        <form id="formKonfirmasiPemesanan" method="post" action="">
+                                        <form action="{{ route('pemesanan.konfirmasi', $pemesanan->id) }}"  method="POST">
                                             @csrf   <!-- Menyertakan token CSRF untuk keamanan -->
-                                            @method('DELETE')
-                                            <button class="btn btn-primary" type="">Konfirmasi</button>
+                                            {{-- @method('POST') --}}
+                                            <button class="btn btn-primary" type="submit">Konfirmasi</button>
                                         </form>
                                     </div>
                                 </div>
@@ -91,7 +110,7 @@
                         <!-- Akhir Modal Konfirmasi Pemesanan Tiket -->
 
                         <!-- Modal Hapus Pemesanan Tiket -->
-                        <div class="modal fade" id="hapusPemesananModal{{ $item_pemesanan->pemesanan_id }}" tabindex="-1" role="dialog" aria-labelledby="hapusPemesananLabel" aria-hidden="true">
+                        <div class="modal fade" id="hapusPemesananModal{{ $pemesanan->id }}" tabindex="-1" role="dialog" aria-labelledby="hapusPemesananLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -105,10 +124,10 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-                                        <form id="formHapusPemesanan" method="post" action="">
+                                        <form action="{{ route('pemesanan.batal', $pemesanan->id) }}" method="POST">
                                             @csrf   <!-- Menyertakan token CSRF untuk keamanan -->
-                                            @method('DELETE')
-                                            <button class="btn btn-danger" type="">Hapus</button>
+                                            {{-- @method('DELETE') --}}
+                                            <button class="btn btn-danger" type="submit">Hapus</button>
                                         </form>
                                     </div>
                                 </div>

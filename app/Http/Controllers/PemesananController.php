@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Jadwal;
 use App\Models\Pemesanan;
+use App\Models\RiwayatPemesanan;
 
 class PemesananController extends Controller
 {
@@ -11,7 +13,7 @@ class PemesananController extends Controller
     {
         return view('admin.admin-pemesanan.adminPemesanan', [
             "title" => "Admin Kelola Pemesanan",
-            "data_pemesanan" => Pemesanan::all(),
+            "pemesanans" => Pemesanan::all(),
             'status_pemesanan' => 'Menunggu konfirmasi' // Set status default
         ]);
     }
@@ -20,8 +22,50 @@ class PemesananController extends Controller
     {
         return view('admin.admin-pemesanan.adminDetailPemesanan', [
             "title" => "Admin Kelola Pemesanan",
-            "item_pemesanan" => $pemesanan,
+            "pemesanan" => $pemesanan,
             'status_pemesanan' => 'Menunggu konfirmasi' // Set status default
         ]);
     }
+
+    // Menangani konfirmasi pemesanan
+    public function confirm($id)
+    {
+        // Mengambil data pemesanan berdasarkan id
+        $pemesanan = Pemesanan::findOrFail($id);
+        // $pemesanan->status_pemesanan = 'Terkonfirmasi';
+        // $pemesanan->save();
+
+        // Pindahkan ke riwayat
+        RiwayatPemesanan::create([
+            'pemesanan_id' => $pemesanan->id,
+            'jadwal_id' => $pemesanan->jadwal_id,
+            'asal' => $pemesanan->asal,
+            'status_pemesanan' => 'Terkonfirmasi'
+        ]);
+
+        // Hapus dari pemesanan tiket
+        $pemesanan->delete();
+
+        // Menampilkan pesan sukses
+        return redirect()->route('admin.pemesanan')->with('success', 'Pemesanan dikonfirmasi');
+    }
+
+    // // Menangani pembatalan pemesanan
+    // public function cancel($id)
+    // {
+    //     $pemesanan = Pemesanan::findOrFail($id);
+    //     $pemesanan->status_pemesanan = 'Dibatalkan';
+    //     $pemesanan->save();
+
+    //     // Pindahkan ke riwayat
+    //     RiwayatPemesanan::create([
+    //         'pemesanan_id' => $pemesanan->id,
+    //         'status_pemesanan' => 'Dibatalkan'
+    //     ]);
+
+    //     // Hapus dari pemesanan tiket
+    //     $pemesanan->delete();
+
+    //     return redirect()->route('pemesanan.index')->with('success', 'Pemesanan dibatalkan');
+    // }
 }

@@ -25,4 +25,10 @@ class Jadwal extends Model
     {
         return $this->belongsTo(Supir::class);
     }
+
+    // Menghubungkan dengan tabel pemesanan
+    public function Pemesanan()
+    {
+        return $this->hasMany(Pemesanan::class);
+    }
 }

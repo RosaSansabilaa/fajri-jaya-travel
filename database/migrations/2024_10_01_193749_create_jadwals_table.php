@@ -15,8 +15,8 @@ class CreateJadwalsTable extends Migration
     {
         Schema::create('jadwals', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('kendaraan_id')->nullable();  //constrained -> memberitahu laravel bahwa kendaraan_id merujuk pada tabel kendaraan
-            $table->foreignId('supir_id')->nullable();  //onDelete(cascade) -> agar ketika record/data di hapus di tabel supirs, maka akan dihapus juga pada tabel jadwal
+            $table->foreignId('kendaraan_id')->onDelete('cascade')->nullable();  //constrained -> memberitahu laravel bahwa kendaraan_id merujuk pada tabel kendaraan
+            $table->foreignId('supir_id')->onDelete('cascade')->nullable();  //onDelete(cascade) -> agar ketika record/data di hapus di tabel supirs, maka akan dihapus juga pada tabel jadwal
             $table->date('tanggal_berangkat');
             $table->time('jam_berangkat');
             // $table->string('asal');

@@ -93,17 +93,26 @@
   color: #364b8b; /* Warna teks saat dihover */
 }
 
-#status-pemesanan.confirmed-status {
+/* .status-pemesanan {
+  padding: 2px 2px 2px 2px;
+  font-size: 12px;
+  width:90%;
+  color: #ffffff;
+  font-weight: 500;
+  border-radius: 20px;
+}
+
+.confirmed-status {
   background-color: #24ac7a;
 }
 
-#status-pemesanan.pending-status {
+.pending-status {
   background-color: #dba51a;
 }
 
-#status-pemesanan.cancel-status {
+.cancel-status {
   background-color: #e74a3b;
-}
+} */
 
 
 
