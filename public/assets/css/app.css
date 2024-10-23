@@ -84,10 +84,11 @@
 .jumbotron {
     padding: 8vw 6vw 8vw 6vw;
     margin: 5vh 0 1vh 0;
-    background-image: url("../img/contohgambarjumbotron.jpeg");
+    background-image: url("../img/jumbotron-image.jpg");
     position: relative;   /* relatif terhadap posisi normalnya, masih di dalam aliran dokumen */
     background-size: cover; /* mengatur agar background menutupi seluruh elemen tanpa mengubah rasionya */
     display: flex;
+    background-position: center;
 }
 
 .jumbotron .jumbotron-content {

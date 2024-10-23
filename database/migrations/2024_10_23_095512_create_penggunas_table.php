@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKendaraansTable extends Migration
+class CreatePenggunasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateKendaraansTable extends Migration
      */
     public function up()
     {
-        Schema::create('kendaraans', function (Blueprint $table) {
+        Schema::create('penggunas', function (Blueprint $table) {
             $table->id();
-            $table->string('nomor_plat')->unique();
-            $table->string('tipe')->nullable();
-            $table->integer('kapasitas');
-            $table->text('keterangan')->nullable();
+            $table->string('nama');
+            $table->string('no_hp');
+            $table->string('username');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->rememberToken();
         });
     }
 
@@ -29,6 +31,6 @@ class CreateKendaraansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kendaraans');
+        Schema::dropIfExists('penggunas');
     }
 }

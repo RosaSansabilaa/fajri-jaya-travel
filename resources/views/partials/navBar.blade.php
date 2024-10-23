@@ -5,7 +5,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link {{ ($title === "Beranda") ? 'active' : '' }}" href="/">Beranda</a>
             </li>
             <li class="nav-item">
@@ -16,7 +16,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link {{ ($title === "Tentang Kami") ? 'active' : '' }}" href="/tentang-kami">Tentang Kami</a>
-            </li>
+            </li> --}}
         </ul>
     </div>
 </nav>

@@ -21,9 +21,15 @@ class Pemesanan extends Model
         return $this->belongsTo(Jadwal::class, 'jadwal_id');
     }
 
+    // Menghubungkan dengan tabel pengguna
+    public function Pengguna()
+    {
+        return $this->belongsTo(Pengguna::class, 'pengguna_id');
+    }
+
     // Menghubungkan dengan tabel riwayat pemesanan
     public function RiwayatPemesanan()
     {
-        return $this->hasOne(RiwayatPemesanan::class, 'pemesanan_id');
+        return $this->hasOne(RiwayatPemesanan::class);
     }
 }

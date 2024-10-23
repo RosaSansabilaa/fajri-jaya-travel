@@ -21,9 +21,10 @@ class CreatePemesanansTable extends Migration
             // $table->enum('asal', ['Mataram', 'Sumbawa Besar', 'Taliwang']);
             // $table->enum('tujuan', ['Mataram', 'Sumbawa Besar', 'Taliwang']);
             $table->foreignId('jadwal_id')->onDelete('cascade');
-            $table->string('nama_pemesan');
-            $table->string('no_hp');
-            $table->string('email_pemesan')->unique(); 
+            $table->foreignId('pengguna_id')->onDelete('cascade');
+            // $table->string('nama_pemesan');
+            // $table->string('no_hp');
+            // $table->string('email_pemesan')->unique(); 
             $table->integer('jumlah_kursi'); 
             $table->string('nomor_kursi'); 
             $table->string('nama_penumpang');

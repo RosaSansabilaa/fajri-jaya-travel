@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Jadwal;
 use App\Models\Pemesanan;
+use App\Models\Pengguna;
 use App\Models\RiwayatPemesanan;
 
 class PemesananController extends Controller
@@ -38,8 +39,8 @@ class PemesananController extends Controller
         // Pindahkan ke riwayat
         RiwayatPemesanan::create([
             'pemesanan_id' => $pemesanan->id,
-            'jadwal_id' => $pemesanan->jadwal_id,
-            'asal' => $pemesanan->asal,
+            // 'jadwal_id' => $pemesanan->jadwal_id,
+            // 'asal' => $pemesanan->asal,
             'status_pemesanan' => 'Terkonfirmasi'
         ]);
 

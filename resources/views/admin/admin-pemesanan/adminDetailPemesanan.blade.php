@@ -48,19 +48,19 @@
         <div class="form-group row">
             <label for="namaPemesan" class="col-sm-3 col-form-label">Nama Pemesan</label>
             <div class="col-sm-9">
-                <div class="form-control" id="namaPemesan">{{ $pemesanan->nama_pemesan }}</div>
+                <div class="form-control" id="namaPemesan">{{ optional($pemesanan->pengguna)->nama }}</div>
             </div>
         </div>
         <div class="form-group row">
             <label for="nomorTelepon" class="col-sm-3 col-form-label">Nomor Telepon</label>
             <div class="col-sm-9">
-                <div class="form-control" id="nomorTelepon">{{ $pemesanan->no_hp }}</div>
+                <div class="form-control" id="nomorTelepon">{{ optional($pemesanan->pengguna)->no_hp }}</div>
             </div>
         </div>
         <div class="form-group row">
             <label for="emailPemesan" class="col-sm-3 col-form-label">Email Pemesan</label>
             <div class="col-sm-9">
-                <div class="form-control" id="emailPemesan">{{ $pemesanan->email_pemesan }}</div>
+                <div class="form-control" id="emailPemesan">{{ optional($pemesanan->pengguna)->email }}</div>
             </div>
         </div>
         <div class="form-group row">

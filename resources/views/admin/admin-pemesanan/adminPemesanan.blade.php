@@ -56,7 +56,7 @@
                             <td>{{ optional($pemesanan->jadwal)->jam_berangkat }}</td>
                             <td>{{ optional($pemesanan->jadwal)->asal }}</td>
                             <td>{{ optional($pemesanan->jadwal)->tujuan }}</td>
-                            <td>{{ $pemesanan->nama_pemesan }}</td>
+                            <td>{{ optional($pemesanan->pengguna)->nama }}</td>
                             <td>{{ $pemesanan->jumlah_kursi }}</td>
                             <td>{{ $pemesanan->total_harga }}</td>
                             {{-- <td>{{ $pemesanan->status_pemesanan }}</td> --}}
